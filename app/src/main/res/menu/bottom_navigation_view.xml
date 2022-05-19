@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:android="http://schemas.android.com/apk/res/android"
+>
+
+    <item
+        android:title="home"
+        android:id="@+id/feedButton"
+        android:icon="@drawable/menu_feed"
+        app:showAsAction="always"
+        />
+    <item
+        android:title="shop"
+        android:id="@+id/chatButton"
+        android:icon="@drawable/menu_chat"
+        app:showAsAction="always"/>
+    <item
+        android:title="ar"
+        android:id="@+id/homeButton"
+        android:icon="@drawable/menu_home"
+        app:showAsAction="always"/>
+    <item
+        android:title="cal"
+        android:id="@+id/pickButton"
+        android:icon="@drawable/menu_pick"
+        app:showAsAction="always"/>
+    <item
+        android:title="set"
+        android:id="@+id/setButton"
+        android:icon="@drawable/menu_setting"
+        app:showAsAction="always"/>
+</menu>
