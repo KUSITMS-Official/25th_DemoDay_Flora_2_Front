@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Flora">
+        <activity android:name=".AfterSearchPage"></activity>
+        <activity android:name=".SearchPage" />
         <activity android:name=".OrderList" />
         <activity
             android:name=".LocationSetting"
