@@ -50,7 +50,7 @@
                     android:text="수원시 영통동"
                     android:textColor="@android:color/black"
                     android:textSize="19dp"
-                    android:textStyle="bold" />
+                    android:fontFamily="@font/spoqahansansneo_medium"/>
 
                 <ImageView
                     android:id="@+id/iv_menu"
@@ -91,8 +91,9 @@
             android:id="@+id/editSearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="검색어를 입력해주세요."
-            android:backgroundTint="#00ff0000" />
+            android:backgroundTint="#00ff0000"
+            android:fontFamily="@font/spoqahansansneo_regular"
+            android:hint="검색어를 입력해주세요." />
 
     </LinearLayout>
     <LinearLayout
@@ -106,7 +107,7 @@
             android:text="최근 검색어"
             android:textColor="@android:color/black"
             android:textSize="18dp"
-            android:textStyle="bold"
+            android:fontFamily="@font/spoqahansansneo_bold"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="30dp"/>
         <ImageView

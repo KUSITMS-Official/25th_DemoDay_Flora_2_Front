@@ -4,14 +4,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
+
+import static android.content.ContentValues.TAG;
 
 public class AfterSearchPage extends AppCompatActivity {
 
     public SearchRecyclerAdapter mRecyclerAdapter;
     public ArrayList<SearchItem> mSearchItems;
+    private ImageView arrowButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +27,16 @@ public class AfterSearchPage extends AppCompatActivity {
 
         RecyclerView mRecyclerView = findViewById(R.id.recycler);
 
+        arrowButton = (ImageView) findViewById(R.id.arrowButton);
+
+        arrowButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: 클릭됨");
+                Intent intent = new Intent(AfterSearchPage.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 //        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 //        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL,false));
 
