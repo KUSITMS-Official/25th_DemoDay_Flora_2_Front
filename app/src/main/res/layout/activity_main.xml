@@ -30,11 +30,11 @@
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomMenu"
             android:layout_width="match_parent"
-            android:layout_height="72dp"
+            android:layout_height="62dp"
             android:layout_gravity="bottom"
             app:backgroundTint="#FFFFFF"
             app:itemIconTint="@drawable/menu_selector_color"
-            app:labelVisibilityMode="unlabeled"
+            app:labelVisibilityMode="labeled"
             app:menu="@menu/bottom_navigation_view" />
     </FrameLayout>
 

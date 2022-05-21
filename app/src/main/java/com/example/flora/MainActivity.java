@@ -29,6 +29,7 @@ import static android.content.ContentValues.TAG;
 public class MainActivity extends AppCompatActivity {
 
     public ImageView ivMenu;
+    public ImageView menu_search;
     public Toolbar toolbar;
 
     FeedFragment peedFragment;
@@ -53,19 +54,26 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ivMenu=findViewById(R.id.iv_menu);
+        menu_search=findViewById(R.id.menu_search);
         toolbar=findViewById(R.id.toolbar);
 
         //액션바 변경하기(들어갈 수 있는 타입 : Toolbar type
         setSupportActionBar(toolbar);
-
-
-
 
         ivMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: 클릭됨");
                 Intent intent = new Intent(MainActivity.this, LocationSetting.class);
+                startActivity(intent);
+            }
+        });
+
+        menu_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: 클릭됨");
+                Intent intent = new Intent(MainActivity.this, SearchPage.class);
                 startActivity(intent);
             }
         });
