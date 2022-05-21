@@ -39,9 +39,7 @@ public class SearchPage extends AppCompatActivity {
         arrowButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "onClick: 클릭됨");
-                Intent intent = new Intent(SearchPage.this, MainActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
 

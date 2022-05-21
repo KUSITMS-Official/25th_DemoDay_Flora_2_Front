@@ -111,9 +111,9 @@ public class MainActivity extends AppCompatActivity {
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, settingFragment).commit();
                         Log.d("LOG", "세팅화면");
                         return true;
-//                        Intent intent = new Intent(getApplicationContext(), OrderList.class);
-//                        startActivity(intent);
-//                        return true;
+                        //Intent intent = new Intent(getApplicationContext(), OrderList.class);
+                        //startActivity(intent);
+                        //return true;
                 }
                 return false;
             }

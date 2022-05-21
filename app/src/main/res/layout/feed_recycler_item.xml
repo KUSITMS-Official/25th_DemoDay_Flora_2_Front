@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:text="꽃빛나다"
                 android:textSize="13dp"
-                android:textStyle="bold"
+                android:fontFamily="@font/spoqahansansneo_medium"
                 android:textColor="@color/black"
                 android:layout_margin="5dp"/>
         </LinearLayout>
@@ -64,6 +64,7 @@
             android:layout_height="wrap_content"
             android:text="프리지아 하늘색 꽃다발"
             android:textSize="13dp"
+            android:fontFamily="@font/spoqahansansneo_regular"
             android:textColor="#8E8C94"
             android:layout_marginLeft="5dp"/>
         <LinearLayout
@@ -75,8 +76,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="12%"
-                android:textSize="13dp"
-                android:textStyle="bold"
+                android:textSize="12dp"
+                android:fontFamily="@font/spoqahansansneo_medium"
                 android:textColor="#FFE83A"
                 android:layout_marginLeft="5dp"/>
             <TextView
@@ -85,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:text="65,000원"
                 android:textSize="13dp"
-                android:textStyle="bold"
+                android:fontFamily="@font/spoqahansansneo_medium"
                 android:textColor="@color/black"
                 android:layout_marginLeft="5dp"/>
         </LinearLayout>
