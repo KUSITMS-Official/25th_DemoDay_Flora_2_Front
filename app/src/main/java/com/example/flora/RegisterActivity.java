@@ -50,46 +50,37 @@ public class RegisterActivity extends AppCompatActivity {
         Intent moveLoginActivity = new Intent(this, LoginActivity.class);
 
         // validate-email : id
-        editId.addTextChangedListener(new TextWatcher() {
+        editId.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            public void onFocusChange(View view, boolean b) {
+                if(!b) {
+                    String id = editId.getText().toString();
 
-            }
+                    Call<String> call = RetrofitClient.getAPIService().getValidateEmail(id);
 
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                    call.enqueue(new Callback<String>() {
+                        @Override
+                        public void onResponse(Call<String> call, Response<String> response) {
+                            if (response.isSuccessful()) {
+                                Log.d("연결이 성공적 : ", response.body().toString());
+                                if (response.body().toString().equals("true")) {
+                                    checkId.setVisibility(View.VISIBLE);
+                                } else {
+                                    checkId.setVisibility(View.GONE);
+                                }
+                            } else {
+                                Log.e("연결이 비정상적 : ", "error code : " + response.code());
+                            }
+                        }
 
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-//                String id = editId.getText().toString();
-//
-//                Call<String> call = RetrofitClient.getAPIService().getValidateEmail(id);
-//
-//                call.enqueue(new Callback<String>() {
-//                    @Override
-//                    public void onResponse(Call<String> call, Response<String> response) {
-//                        if (response.isSuccessful()) {
-//                            Log.d("연결이 성공적 : ", response.body().toString());
-//                            if (call.equals(true)) {
-//                                checkId.setVisibility(View.GONE);
-//                            } else {
-//                                checkId.setVisibility(View.VISIBLE);
-//                            }
-//                        } else {
-//                            Log.e("연결이 비정상적 : ", "error code : " + response.code());
-//                        }
-//                    }
-//
-//                    @Override
-//                    public void onFailure(Call<String> call, Throwable t) {
-//                        Log.e("연결실패", t.getMessage());
-//                    }
-//                });
+                        @Override
+                        public void onFailure(Call<String> call, Throwable t) {
+                            Log.e("연결실패", t.getMessage());
+                        }
+                    });
+                }
             }
         });
-
 
         // click sign in
         btnRegister.setOnClickListener(new View.OnClickListener() {
