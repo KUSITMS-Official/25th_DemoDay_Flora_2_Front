@@ -2,13 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.flora">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Flora">
+        android:theme="@style/Theme.Flora"
+        android:usesCleartextTraffic="true">
         <activity android:name=".AfterSearchPage"></activity>
         <activity android:name=".SearchPage" />
         <activity android:name=".OrderList" />
@@ -16,7 +19,13 @@
             android:name=".LocationSetting"
             android:exported="true" />
         <activity
+            android:name=".RegisterActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
