@@ -21,8 +21,13 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.prolificinteractive.materialcalendarview.CalendarDay;
+import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
+import com.prolificinteractive.materialcalendarview.format.TitleFormatter;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import static android.content.ContentValues.TAG;
 
@@ -120,17 +125,4 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
-    // 툴바 액티비티 연동
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        switch (item.getItemId()) {
-//            case R.id.menu:
-//                Intent NewActivity = new Intent(getApplicationContext(), bluetoothDeviceLists.class);
-//                startActivity(NewActivity);
-//                break;
-//        }
-//
-//        return true;
-//    }
 }
