@@ -32,7 +32,7 @@
 
 
             <EditText
-                android:id="@+id/et_nickname"
+                android:id="@+id/et_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -65,6 +65,17 @@
                 android:padding="16dp"
                 android:textColor="#BBBABF"
                 android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/ch_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="이미 존재하는 이메일입니다"
+                android:textColor="#F72F3F"
+                android:layout_marginTop="8dp"
+                android:textSize="12sp"
+                android:visibility="gone"
+                />
 
             <TextView
                 android:layout_width="match_parent"
@@ -247,8 +258,9 @@
             <Button
                 android:id="@+id/btn_register"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="36dp"
+                android:layout_marginBottom="5dp"
                 android:background="@drawable/white_button"
                 android:text="회원가입"
                 android:textColor="#D2D1D4"

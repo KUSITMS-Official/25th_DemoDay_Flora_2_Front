@@ -9,6 +9,13 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.flora.request.LoginRequest;
+import com.example.flora.response.UserToken;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class LoginActivity extends AppCompatActivity {
 
     EditText editId, editPassword;
@@ -22,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        editId = findViewById(R.id.et_id);
+        editId = findViewById(R.id.et_email);
         editPassword = findViewById(R.id.et_password);
         btnLogin = findViewById(R.id.btn_login);
         btnSignUp = findViewById(R.id.btn_register);
@@ -40,42 +47,38 @@ public class LoginActivity extends AppCompatActivity {
                 String id = editId.getText().toString();
                 String pw = editPassword.getText().toString();
 
-//                // id, pw보내기 -> 응답받기, 토큰 저장
-//                LoginRequest request = new LoginRequest(pw,id);
-//
-//                // retrofit2
-//                Call<UserToken> call = RetrofitClient.getAPIService().postUserTokenData(request);
-//
-//                call.enqueue(new Callback<UserToken>() {
-//                    @Override
-//                    public void onResponse(Call<UserToken> call, Response<UserToken> response) {
-//                        if(response.isSuccessful()) {
-//                            Log.d("연결이 성공적 : ", response.body().toString());
-//                            UserToken userToken = response.body();
-//                            token = userToken.getToken();
-//
-//                            // 로그인 할 때 cnt 불러와
-//                            ((AppTest) getApplication()).setCount(userToken.getClick_cnt());
-//
-//
-//                            System.out.println("토큰 : " + token + "이 저장되었습니다.");
-//
-//                            Bundle bundle = new Bundle();
-//                            bundle.putString("userToken", token);
-//                            intentMainActivity.putExtras(bundle);
-//
-//                            intentMainActivity.putExtra("user_token", token);
-//                            startActivity(intentMainActivity);
-//
-//                        } else {
-//                            Log.e("연결이 비정상적 : ", "error code : " + response.code());
-//                        }
-//                    }
-//                    @Override
-//                    public void onFailure(Call<UserToken> call, Throwable t) {
-//                        Log.e("연결실패", t.getMessage());
-//                    }
-//                });
+                // id, pw보내기 -> 응답받기, 토큰 저장
+                LoginRequest request = new LoginRequest(id, pw);
+
+                // retrofit2
+                Call<UserToken> call = RetrofitClient.getAPIService().postUserTokenData(request);
+
+                call.enqueue(new Callback<UserToken>() {
+                    @Override
+                    public void onResponse(Call<UserToken> call, Response<UserToken> response) {
+                        if(response.isSuccessful()) {
+                            Log.d("연결이 성공적 : ", response.body().toString());
+                            UserToken userToken = response.body();
+                            token = userToken.getAccessToken();
+
+                            System.out.println("토큰 : " + token + "이 저장되었습니다.");
+
+                            Bundle bundle = new Bundle();
+                            bundle.putString("accessToken", token);
+                            intentMainActivity.putExtras(bundle);
+
+                            intentMainActivity.putExtra("access_token", token);
+                            startActivity(intentMainActivity);
+
+                        } else {
+                            Log.e("연결이 비정상적 : ", "error code : " + response.code());
+                        }
+                    }
+                    @Override
+                    public void onFailure(Call<UserToken> call, Throwable t) {
+                        Log.e("연결실패", t.getMessage());
+                    }
+                });
 
             }
         });  // 로그인 end

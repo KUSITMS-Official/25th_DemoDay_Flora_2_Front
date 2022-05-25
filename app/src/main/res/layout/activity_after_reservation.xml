@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ReservationActivity"
+    tools:context=".AfterReservationActivity"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
@@ -47,75 +47,105 @@
                     android:layout_marginEnd="-1dp"
                     android:layout_marginBottom="10dp"
                     android:gravity="center"
-                    android:text="에약하기"
+                    android:text="상품보기"
                     android:textColor="@android:color/black"
                     android:textSize="19dp"
                     android:fontFamily="@font/spoqahansansneo_medium"/>
             </LinearLayout>
         </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
-
-    <LinearLayout android:id="@+id/calendar"
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="39dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:orientation="vertical">
-
-
-    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
-        android:id="@+id/calendarview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:theme="@style/CalenderViewCustom">
-    </com.prolificinteractive.materialcalendarview.MaterialCalendarView>
-    </LinearLayout>
-
-    <ImageView
-        android:layout_width="412dp"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/grayline"
-        android:adjustViewBounds="true"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp">
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="픽업 시간"
-            android:textSize="19dp"
+            android:text="참고 이미지"
+            android:textSize="22dp"
             android:fontFamily="@font/spoqahansansneo_bold"
             android:textColor="@color/black"
             android:layout_marginTop="30dp"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="15dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(선택)"
+            android:textSize="16dp"
+            android:fontFamily="@font/spoqahansansneo_regular"
+            android:textColor="#F72F3F"
+            android:layout_marginTop="27dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="15dp"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="356dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="20dp"
+        android:adjustViewBounds="true"
+        app:srcCompat="@drawable/grayline_thin2" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/plus_photo"
+        android:adjustViewBounds="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="30dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="기타 전달사항"
+            android:textSize="22dp"
+            android:fontFamily="@font/spoqahansansneo_bold"
+            android:textColor="@color/black"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="15dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(선택)"
+            android:textSize="16dp"
+            android:fontFamily="@font/spoqahansansneo_regular"
+            android:textColor="#F72F3F"
+            android:layout_marginTop="27dp"
+            android:layout_marginLeft="15dp"
             android:layout_marginBottom="15dp"/>
     </LinearLayout>
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        app:srcCompat="@drawable/grayline_thin"
+        android:layout_width="356dp"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/grayline_thin2"
         android:adjustViewBounds="true"
-        android:layout_marginBottom="15dp"/>
-    <LinearLayout
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="10dp"/>
+    <EditText
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:id="@+id/editSearch"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:orientation="horizontal"
-        android:layout_marginLeft="30dp">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
+        android:layout_height="250dp"
+        android:hint="    요구사항을 적어주세요."
+        android:fontFamily="@font/spoqahansansneo_medium"
+        android:backgroundTint="#00ff0000"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/edittext_rounded_corner_rectangle"
+        />
     <ImageView
         android:layout_gravity="center"
         android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/next_btn"
+        android:layout_height="70dp"
+        android:id="@+id/reservation_button"
+        app:srcCompat="@drawable/reservation_button"
         android:adjustViewBounds="true"/>
 </LinearLayout>

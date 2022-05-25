@@ -10,8 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Flora"
         android:usesCleartextTraffic="true">
-        android:theme="@style/Theme.Flora">
-        <activity android:name=".ReservationActivity"
+        <activity android:name=".AfterReservationActivity"></activity>
+        <activity
+            android:name=".ReservationActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,14 +20,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FeedSeeProduct"
-            android:exported="true"/>
-        <activity android:name=".AfterSearchPage"
-            android:exported="true"/>
-        <activity android:name=".SearchPage"
-            android:exported="true"/>
-        <activity android:name=".OrderList"
-            android:exported="true"/>
+        <activity
+            android:name=".FeedSeeProduct"
+            android:exported="true" />
+        <activity
+            android:name=".AfterSearchPage"
+            android:exported="true" />
+        <activity
+            android:name=".SearchPage"
+            android:exported="true" />
+        <activity
+            android:name=".OrderList"
+            android:exported="true" />
         <activity
             android:name=".LocationSetting"
             android:exported="true" />

@@ -8,9 +8,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.DayViewDecorator;
@@ -33,6 +36,7 @@ public class ReservationActivity extends AppCompatActivity {
     private MaterialCalendarView calendarView;
     public ReservationRecyclerAdapter mRecyclerAdapter;
     public ArrayList<ReservationItem> mReservationItems;
+    private ImageView reservation_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +44,16 @@ public class ReservationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_reservation);
 
         RecyclerView mRecyclerView = findViewById(R.id.recycler);
+
+        reservation_button = (ImageView) findViewById(R.id.arrowButton);
+
+        reservation_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ReservationActivity.this, AfterReservationActivity.class);
+                startActivity(intent);
+            }
+        });
 
         calendarView = findViewById(R.id.calendarview);
 

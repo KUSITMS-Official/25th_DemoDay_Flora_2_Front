@@ -1,5 +1,6 @@
 package com.example.flora;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 
 import java.util.ArrayList;
 
@@ -72,6 +74,7 @@ public class FeedFragment extends Fragment {
 
         RecyclerView mRecyclerView = rootView.findViewById(R.id.recycler);
 
+
 //        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 //        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL,false));
 
@@ -95,6 +98,7 @@ public class FeedFragment extends Fragment {
         mFeedItems.add(new FeedItem(R.drawable.flower_temp3, R.drawable.profile_temp, "꽃빛나다", "프리지아 하늘색 꽃다발", "12%", "65,000원"));
         mFeedItems.add(new FeedItem(R.drawable.flower_temp4, R.drawable.profile_temp, "꽃빛나다", "프리지아 하늘색 꽃다발", "12%", "65,000원"));
         mRecyclerAdapter.setFeedList(mFeedItems);
+
         return rootView;
     }
 
