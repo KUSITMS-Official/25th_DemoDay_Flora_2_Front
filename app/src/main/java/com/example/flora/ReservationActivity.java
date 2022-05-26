@@ -35,8 +35,9 @@ public class ReservationActivity extends AppCompatActivity {
     private final String TAG = this.getClass().getSimpleName();
     private MaterialCalendarView calendarView;
     public ReservationRecyclerAdapter mRecyclerAdapter;
-    public ArrayList<ReservationItem> mReservationItems;
+    public ArrayList<ReservationItem> mReservationItems = new ArrayList<ReservationItem>();
     private ImageView next_btn;
+    private ImageView arrowButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +57,15 @@ public class ReservationActivity extends AppCompatActivity {
             }
         });
 
+        arrowButton = (ImageView) findViewById(R.id.arrowButton);
+
+        arrowButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         calendarView = findViewById(R.id.calendarview);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
@@ -71,7 +81,7 @@ public class ReservationActivity extends AppCompatActivity {
         /* adapt data */
         mReservationItems = new ArrayList<>();
         mReservationItems.add(new ReservationItem(R.drawable.time_img, "09:00"));
-        mReservationItems.add(new ReservationItem(R.drawable.time_img_col, "09:30"));
+        mReservationItems.add(new ReservationItem(R.drawable.time_img, "09:30"));
         mReservationItems.add(new ReservationItem(R.drawable.time_img, "10:00"));
         mReservationItems.add(new ReservationItem(R.drawable.time_img, "10:30"));
         mReservationItems.add(new ReservationItem(R.drawable.time_img, "11:00"));

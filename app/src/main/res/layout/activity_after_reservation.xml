@@ -63,12 +63,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="참고 이미지"
-            android:textSize="22dp"
+            android:textSize="19dp"
             android:fontFamily="@font/spoqahansansneo_bold"
             android:textColor="@color/black"
             android:layout_marginTop="30dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="15dp"/>
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="20dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -90,9 +90,10 @@
         app:srcCompat="@drawable/grayline_thin2" />
 
     <ImageView
+        android:id="@+id/photo_go"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        app:srcCompat="@drawable/plus_photo"
+        app:srcCompat="@drawable/ic_outline_image_24"
         android:adjustViewBounds="true"
         android:layout_marginBottom="15dp"
         android:layout_marginLeft="30dp"/>
@@ -104,13 +105,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="기타 전달사항"
-            android:textSize="22dp"
+            android:text="기타 전달 사항"
+            android:textSize="19dp"
             android:fontFamily="@font/spoqahansansneo_bold"
             android:textColor="@color/black"
             android:layout_marginTop="30dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="15dp"/>
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="20dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -134,7 +135,7 @@
         android:layout_marginRight="32dp"
         android:id="@+id/editSearch"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="295dp"
         android:hint="    요구사항을 적어주세요."
         android:fontFamily="@font/spoqahansansneo_medium"
         android:backgroundTint="#00ff0000"
@@ -144,7 +145,7 @@
     <ImageView
         android:layout_gravity="center"
         android:layout_width="350dp"
-        android:layout_height="70dp"
+        android:layout_height="wrap_content"
         android:id="@+id/reservation_button"
         app:srcCompat="@drawable/reservation_button"
         android:adjustViewBounds="true"/>

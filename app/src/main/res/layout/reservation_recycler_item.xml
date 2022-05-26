@@ -10,7 +10,7 @@
         android:layout_marginRight="10dp">
         <ImageView
             android:id="@+id/timeImg"
-            android:layout_width="wrap_content"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:src="@drawable/time_img"
             android:adjustViewBounds="true"
