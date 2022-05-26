@@ -88,6 +88,9 @@ public class MainActivity extends AppCompatActivity {
                         String[] splitAddress = address.split(" ");
                         tvLocation.setText(new StringBuilder().append(splitAddress[1] + " " + splitAddress[2]));
                     }
+                    else {
+
+                    }
                 } else {
                     Log.e("연결이 비정상적 : ", "error code : " + response.code());
                 }

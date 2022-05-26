@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,46 +12,85 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+
 
 public class HomeRecyclerAdapter3 extends RecyclerView.Adapter<HomeRecyclerAdapter3.ViewHolder> {
 
-    private ArrayList<HomeItem3> mHomeList3;
+    private Context context;
+    private ArrayList<FeedItem> mFeedList;
 
     @NonNull
     @NotNull
     @Override
     public HomeRecyclerAdapter3.ViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_recycler_item3, parent, false);
+
         return new ViewHolder(view);
+
     }
 
     @Override
     public void onBindViewHolder(@NonNull @NotNull HomeRecyclerAdapter3.ViewHolder holder, int position) {
-        holder.onBind(mHomeList3.get(position));
+        holder.onBind(mFeedList.get(position));
     }
 
-    public void setHomeList3(ArrayList<HomeItem3> list){
-        this.mHomeList3 = list;
+    public void setSaleList(Context context, ArrayList<FeedItem> list){
+        this.context = context;
+        this.mFeedList = list;
         notifyDataSetChanged();
     }
 
     @Override
     public int getItemCount() {
-        return mHomeList3.size();
+        return mFeedList.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView temp_item1;
+        ImageView flowerImage;
+        ImageView profileImage;
+        TextView titleTv;
+        TextView contextTv;
+        TextView priceTv;
+        TextView discountTv;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            temp_item1 = (ImageView) itemView.findViewById(R.id.temp_item1);
+            flowerImage = (ImageView) itemView.findViewById(R.id.flowerImage);
+            profileImage = (ImageView) itemView.findViewById(R.id.profileImage);
+            titleTv = (TextView) itemView.findViewById(R.id.titleTv);
+            contextTv = (TextView) itemView.findViewById(R.id.contextTv);
+            priceTv = (TextView) itemView.findViewById(R.id.priceTv);
+            discountTv = (TextView) itemView.findViewById(R.id.discountTv);
         }
 
-        void onBind(HomeItem3 item){
-            temp_item1.setImageResource(item.getResourceFlowerId());
+        void onBind(FeedItem item){
+            Glide.with(context).load(item.getFlowerShopImage()).into(flowerImage);
+            Glide.with(context).load(item.getPortfolioImage()).into(profileImage);
+            titleTv.setText(item.getTitle());
+            contextTv.setText(item.getContext());
+            priceTv.setText(item.getPrice());
+            discountTv.setText(item.getDiscount());
         }
+
     }
 
 }
+
