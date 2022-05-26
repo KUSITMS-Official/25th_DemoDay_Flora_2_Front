@@ -82,8 +82,8 @@ public class AfterSearchPage extends AppCompatActivity {
 
         /* adapt data */
         mSearchItems = new ArrayList<>();
-        mSearchItems.add(new SearchItem(R.drawable.flower_temp3, R.drawable.profile_temp, "자연누리", "핑크 장미 꽃", "65,000원", "10%"));
-        mSearchItems.add(new SearchItem(R.drawable.flower_temp4, R.drawable.profile_temp, "자연누리", "장미 돈 꽃다발", "30,000원"));
+        mSearchItems.add(new SearchItem(R.drawable.flower_temp3, R.drawable.profile_temp1, "자연누리", "핑크 장미 꽃", "65,000원", "10%"));
+        mSearchItems.add(new SearchItem(R.drawable.flower_temp4, R.drawable.profile_temp2, "플라우니", "장미 돈 꽃다발", "30,000원"));
         mRecyclerAdapter.setSearchList(mSearchItems);
     }
 }
