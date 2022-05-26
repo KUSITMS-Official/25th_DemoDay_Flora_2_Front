@@ -52,7 +52,7 @@ public class FeedFragment extends Fragment {
 
     public RecyclerView mRecyclerView;
     public FeedRecyclerAdapter mRecyclerAdapter;
-    public static ArrayList<FeedItem> mFeedItems;
+    public ArrayList<FeedItem> mFeedItems;
     Button btnSort;
     Button btnFilter;
     Dialog dialogFilter;
@@ -136,7 +136,6 @@ public class FeedFragment extends Fragment {
 
         /* adapt data */
         getPortfolios(token, null, 5.0, 0, Integer.MAX_VALUE, null);
-        mRecyclerAdapter.setFeedList(getContext(), mFeedItems);
 
         // 필터링
         btnSort = rootView.findViewById(R.id.btn_filter);
@@ -406,10 +405,10 @@ public class FeedFragment extends Fragment {
                         String priceFormat = String.format("%,d원", price);
                         System.out.println(priceFormat);
                         if (discount == 0) {
-                            mFeedItems.add(new FeedItem(data.getPortfolioImage(), data.getFlowerShopResponse().getFlowerShopImage(),
+                            mFeedItems.add(new FeedItem(data.getFlowerShopResponse().getFlowerShopImage(), data.getPortfolioImage(),
                                     data.getFlowerShopResponse().getFlowerShopName(), data.getPortfolioName(), priceFormat, ""));
                         } else {
-                            mFeedItems.add(new FeedItem(data.getPortfolioImage(), data.getFlowerShopResponse().getFlowerShopImage(),
+                            mFeedItems.add(new FeedItem(data.getFlowerShopResponse().getFlowerShopImage(), data.getPortfolioImage(),
                                     data.getFlowerShopResponse().getFlowerShopName(), data.getPortfolioName(), priceFormat, discount + "%"));
                         }
 
