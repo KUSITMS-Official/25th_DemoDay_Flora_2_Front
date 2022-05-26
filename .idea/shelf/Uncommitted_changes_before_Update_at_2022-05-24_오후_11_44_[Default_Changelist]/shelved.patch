@@ -1,0 +1,294 @@
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\r\n    id 'com.android.application'\r\n}\r\napply plugin: 'kotlin-android'\r\n\r\nandroid {\r\n    compileSdkVersion 31\r\n    buildToolsVersion \"30.0.3\"\r\n\r\n    defaultConfig {\r\n        applicationId \"com.example.flora\"\r\n        minSdkVersion 24\r\n        targetSdkVersion 31\r\n        versionCode 1\r\n        versionName \"1.0\"\r\n\r\n        testInstrumentationRunner \"androidx.test.runner.AndroidJUnitRunner\"\r\n    }\r\n\r\n    buildTypes {\r\n        release {\r\n            minifyEnabled false\r\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\r\n        }\r\n    }\r\n    compileOptions {\r\n        sourceCompatibility JavaVersion.VERSION_1_8\r\n        targetCompatibility JavaVersion.VERSION_1_8\r\n    }\r\n}\r\n\r\ndependencies {\r\n    implementation 'androidx.appcompat:appcompat:1.4.0'\r\n    implementation 'com.google.android.material:material:1.5.0'\r\n    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'\r\n    implementation 'androidx.legacy:legacy-support-v4:1.0.0'\r\n    implementation 'androidx.recyclerview:recyclerview:1.1.0'\r\n    testImplementation 'junit:junit:4.+'\r\n    androidTestImplementation 'androidx.test.ext:junit:1.1.3'\r\n    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'\r\n    implementation \"androidx.core:core-ktx:+\"\r\n    implementation \"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version\"\r\n    implementation 'com.github.bumptech.glide:glide:3.7.0'\r\n    implementation \"androidx.recyclerview:recyclerview:1.1.0\"\r\n}\r\nrepositories {\r\n    mavenCentral()\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle b/app/build.gradle
+--- a/app/build.gradle	(revision c0e9bf53fcdb678f7006be284c3a8419dda545fd)
++++ b/app/build.gradle	(date 1653123015190)
+@@ -27,6 +27,10 @@
+         sourceCompatibility JavaVersion.VERSION_1_8
+         targetCompatibility JavaVersion.VERSION_1_8
+     }
++
++    buildFeatures {
++        viewBinding true
++    }
+ }
+ 
+ dependencies {
+@@ -42,6 +46,13 @@
+     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+     implementation 'com.github.bumptech.glide:glide:3.7.0'
+     implementation "androidx.recyclerview:recyclerview:1.1.0"
++
++    //scanable size unit (support for different screen sizes)
++    implementation 'com.intuit.sdp:sdp-android:1.0.6'
++    implementation 'com.intuit.ssp:ssp-android:1.0.6'
++
++    //Round ImageView
++    implementation 'com.makeramen:roundedimageview:2.3.0'
+ }
+ repositories {
+     mavenCentral()
+Index: .idea/runConfigurations.xml
+===================================================================
+diff --git a/.idea/runConfigurations.xml b/.idea/runConfigurations.xml
+deleted file mode 100644
+--- a/.idea/runConfigurations.xml	(revision c0e9bf53fcdb678f7006be284c3a8419dda545fd)
++++ /dev/null	(revision c0e9bf53fcdb678f7006be284c3a8419dda545fd)
+@@ -1,10 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="RunConfigurationProducerService">
+-    <option name="ignoredProducers">
+-      <set>
+-        <option value="com.android.tools.idea.compose.preview.runconfiguration.ComposePreviewRunConfigurationProducer" />
+-      </set>
+-    </option>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_13\" default=\"true\" project-jdk-name=\"13\" project-jdk-type=\"JavaSDK\" />\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision c0e9bf53fcdb678f7006be284c3a8419dda545fd)
++++ b/.idea/misc.xml	(date 1653124972745)
+@@ -1,5 +1,19 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="DesignSurface">
++    <option name="filePathToZoomLevelMap">
++      <map>
++        <entry key="..\:/Flora_Frontend/app/src/main/res/layout/activity_main.xml" value="0.22" />
++        <entry key="..\:/Flora_Frontend/app/src/main/res/layout/activity_search_page.xml" value="0.16822916666666668" />
++        <entry key="..\:/Flora_Frontend/app/src/main/res/layout/fragment_chat.xml" value="0.16666666666666666" />
++        <entry key="..\:/Flora_Frontend/app/src/main/res/layout/fragment_chat_list.xml" value="0.22" />
++        <entry key="..\:/Flora_Frontend/app/src/main/res/layout/fragment_feed.xml" value="0.16822916666666668" />
++        <entry key="..\:/Flora_Frontend/app/src/main/res/layout/fragment_home.xml" value="0.22" />
++        <entry key="..\:/Flora_Frontend/app/src/main/res/layout/home_recycler_item.xml" value="0.5" />
++        <entry key="..\:/Flora_Frontend/app/src/main/res/layout/home_recycler_item2.xml" value="0.6666666666666666" />
++      </map>
++    </option>
++  </component>
+   <component name="ExternalStorageConfigurationManager" enabled="true" />
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" default="true" project-jdk-name="13" project-jdk-type="JavaSDK" />
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
+ </project>
+\ No newline at end of file
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"GradleMigrationSettings\" migrationVersion=\"1\" />\r\n  <component name=\"GradleSettings\">\r\n    <option name=\"linkedExternalProjectsSettings\">\r\n      <GradleProjectSettings>\r\n        <option name=\"testRunner\" value=\"PLATFORM\" />\r\n        <option name=\"distributionType\" value=\"DEFAULT_WRAPPED\" />\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"modules\">\r\n          <set>\r\n            <option value=\"$PROJECT_DIR$\" />\r\n            <option value=\"$PROJECT_DIR$/app\" />\r\n          </set>\r\n        </option>\r\n        <option name=\"resolveModulePerSourceSet\" value=\"false\" />\r\n      </GradleProjectSettings>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+--- a/.idea/gradle.xml	(revision c0e9bf53fcdb678f7006be284c3a8419dda545fd)
++++ b/.idea/gradle.xml	(date 1653136410603)
+@@ -4,9 +4,10 @@
+   <component name="GradleSettings">
+     <option name="linkedExternalProjectsSettings">
+       <GradleProjectSettings>
+-        <option name="testRunner" value="PLATFORM" />
++        <option name="testRunner" value="GRADLE" />
+         <option name="distributionType" value="DEFAULT_WRAPPED" />
+         <option name="externalProjectPath" value="$PROJECT_DIR$" />
++        <option name="gradleJvm" value="Embedded JDK" />
+         <option name="modules">
+           <set>
+             <option value="$PROJECT_DIR$" />
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"CompilerConfiguration\">\r\n    <bytecodeTargetLevel target=\"13\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+--- a/.idea/compiler.xml	(revision c0e9bf53fcdb678f7006be284c3a8419dda545fd)
++++ b/.idea/compiler.xml	(date 1653124972796)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="CompilerConfiguration">
+-    <bytecodeTargetLevel target="13" />
++    <bytecodeTargetLevel target="11" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: app/src/main/res/values/colors.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<resources>\r\n    <color name=\"purple_200\">#FFBB86FC</color>\r\n    <color name=\"purple_500\">#FFE83A</color>\r\n    <color name=\"purple_700\">#FFE83A</color>\r\n    <color name=\"teal_200\">#FF03DAC5</color>\r\n    <color name=\"teal_700\">#FF018786</color>\r\n    <color name=\"black\">#FF000000</color>\r\n    <color name=\"white\">#FFFFFFFF</color>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/colors.xml b/app/src/main/res/values/colors.xml
+--- a/app/src/main/res/values/colors.xml	(revision c0e9bf53fcdb678f7006be284c3a8419dda545fd)
++++ b/app/src/main/res/values/colors.xml	(date 1653116429382)
+@@ -7,4 +7,14 @@
+     <color name="teal_700">#FF018786</color>
+     <color name="black">#FF000000</color>
+     <color name="white">#FFFFFFFF</color>
++
++    #채팅색
++    <color name="primary"></color>
++    <color name="primary_dark"></color>
++    <color name="primary_text"></color>
++    <color name="secondary_text"></color>
++
++    <color name="input_background"></color>
++    <color name="error"></color>
++    <color name="received_message_background"></color>
+ </resources>
+\ No newline at end of file
+Index: app/src/main/java/com/example/flora/ChatListFragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/flora/ChatListFragment.java b/app/src/main/java/com/example/flora/ChatListFragment.java
+new file mode 100644
+--- /dev/null	(date 1653125488460)
++++ b/app/src/main/java/com/example/flora/ChatListFragment.java	(date 1653125488460)
+@@ -0,0 +1,5 @@
++package com.example.flora;
++
++public class ChatListFragment {
++
++}
+Index: app/src/main/res/layout/fragment_chat_list.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_chat_list.xml b/app/src/main/res/layout/fragment_chat_list.xml
+new file mode 100644
+--- /dev/null	(date 1653125320985)
++++ b/app/src/main/res/layout/fragment_chat_list.xml	(date 1653125320985)
+@@ -0,0 +1,116 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:orientation="vertical"
++    tools:context=".SearchPage">
++
++    <androidx.appcompat.widget.Toolbar
++        android:id="@+id/toolbar"
++        xmlns:android="http://schemas.android.com/apk/res/android"
++        xmlns:app="http://schemas.android.com/apk/res-auto"
++        android:layout_width="match_parent"
++        android:layout_height="60dp"
++        app:contentInsetStart="0dp"
++        android:background="@android:color/white">
++
++        <LinearLayout
++            android:layout_width="match_parent"
++            android:layout_height="match_parent"
++            android:orientation="horizontal">
++
++            <ImageView
++                android:id="@+id/arrowButton"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_marginTop="10dp"
++                android:layout_marginBottom="10dp"
++                app:srcCompat="@drawable/arrow_button"
++                android:layout_gravity="center"
++                android:layout_marginLeft="30dp"
++                android:layout_marginRight="90dp"/>
++
++            <TextView
++                android:id="@+id/tv_location"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_gravity="center"
++                android:layout_marginStart="1dp"
++                android:layout_marginTop="10dp"
++                android:layout_marginEnd="-1dp"
++                android:layout_marginBottom="10dp"
++                android:gravity="center"
++                android:orientation="horizontal"
++                android:text="  채팅"
++                android:textColor="@android:color/black"
++                android:textSize="19dp"
++                android:textStyle="bold" />
++
++            <View
++                android:layout_width="0dp"
++                android:layout_height="0dp"
++                android:layout_weight="1" />
++        </LinearLayout>
++    </androidx.appcompat.widget.Toolbar>
++
++
++    <androidx.constraintlayout.widget.ConstraintLayout
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content">
++
++
++        <com.makeramen.roundedimageview.RoundedImageView
++            android:id="@+id/imageProfile"
++            android:layout_width="@dimen/_35sdp"
++            android:layout_height="@dimen/_35sdp"
++            android:background=""
++            android:scaleType="centerCrop"
++            app:riv_oval="true"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toTopOf="parent"
++            />
++
++        <View
++            android:id="@+id/viewSupporter"
++            android:layout_width="1dp"
++            android:layout_height="1dp"
++            app:layout_constraintStart_toEndOf="@id/imageProfile"
++            app:layout_constraintTop_toTopOf="@id/imageProfile"
++            app:layout_constraintBottom_toBottomOf="@id/imageProfile" />
++
++        <TextView
++            android:id="@+id/textName"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:layout_marginStart="@dimen/_8sdp"
++            android:layout_marginEnd="@dimen/_8sdp"
++            android:ellipsize="end"
++            android:maxLines="1"
++            android:textSize="@dimen/_13ssp"
++            app:layout_constraintBottom_toTopOf="@id/viewSupporter"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintStart_toEndOf="@id/imageProfile"
++
++            />
++
++
++        <TextView
++            android:id="@+id/textEmail"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:layout_marginStart="@dimen/_8sdp"
++            android:layout_marginEnd="@dimen/_8sdp"
++            android:ellipsize="end"
++            android:maxLines="1"
++            android:textSize="@dimen/_10ssp"
++            app:layout_constraintTop_toBottomOf="@id/viewSupporter"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintStart_toEndOf="@id/imageProfile"
++
++            />
++
++    </androidx.constraintlayout.widget.ConstraintLayout>
++
++</LinearLayout>
+\ No newline at end of file

@@ -2,6 +2,7 @@
     <string name="app_name">Flora</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="type_a_message">type a message</string>
 
     <string-array name="custom_weekdays">
         <item>일</item>
