@@ -63,10 +63,6 @@ public class LoginActivity extends AppCompatActivity {
 
                             System.out.println("토큰 : " + token + "이 저장되었습니다.");
 
-                            Bundle bundle = new Bundle();
-                            bundle.putString("accessToken", token);
-                            intentMainActivity.putExtras(bundle);
-
                             intentMainActivity.putExtra("access_token", token);
                             startActivity(intentMainActivity);
 

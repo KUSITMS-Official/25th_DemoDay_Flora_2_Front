@@ -6,26 +6,26 @@
     <item
         android:title="피드"
         android:id="@+id/feedButton"
-        android:icon="@drawable/menu_feed"
+        android:icon="@drawable/ic_feed"
         app:showAsAction="always" />
     <item
         android:title="채팅"
         android:id="@+id/chatButton"
-        android:icon="@drawable/menu_chat"
+        android:icon="@drawable/ic_chat"
         app:showAsAction="always"/>
     <item
         android:title="홈"
         android:id="@+id/homeButton"
-        android:icon="@drawable/menu_home"
+        android:icon="@drawable/ic_home"
         app:showAsAction="always"/>
     <item
         android:title="찜하기"
         android:id="@+id/pickButton"
-        android:icon="@drawable/menu_pick"
+        android:icon="@drawable/ic_heart"
         app:showAsAction="always"/>
     <item
         android:title="마이페이지"
         android:id="@+id/setButton"
-        android:icon="@drawable/menu_setting"
+        android:icon="@drawable/ic_user"
         app:showAsAction="always"/>
 </menu>

@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.flora">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,40 +14,38 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Flora"
         android:usesCleartextTraffic="true">
-        <activity android:name=".AfterReservationActivity"></activity>
+        <activity android:name=".AfterSearchPage" />
+        <activity android:name=".SearchPage" />
+        <activity android:name=".OrderList" />
+        <activity android:name=".AfterReservationActivity" />
         <activity
             android:name=".ReservationActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".FeedSeeProduct"
             android:exported="true" />
         <activity
-            android:name=".AfterSearchPage"
+            android:name=".SearchMapActivity"
             android:exported="true" />
-        <activity
-            android:name=".SearchPage"
-            android:exported="true" />
-        <activity
-            android:name=".OrderList"
-            android:exported="true" />
+        <activity android:name=".RegisterActivity" />
         <activity
             android:name=".LocationSetting"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="com.naver.maps.map.CLIENT_ID"
+            android:value="8fz6aeboa3" />
     </application>
 
 </manifest>

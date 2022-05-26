@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment" >
+    tools:context=".HomeFragment">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:layout_marginBottom="70dp" >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
-            <ImageView
+            <com.naver.maps.map.MapView
                 android:id="@+id/mapView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/map_img"
-                android:adjustViewBounds="true"
-                />
+                android:layout_height="300dp"
+                 />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -32,25 +31,27 @@
                     android:id="@+id/textView1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="인기 꽃집"
-                    android:textSize="20dp"
-                    android:textColor="@color/black"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:fontFamily="@font/spoqahansansneo_bold"/>
+                    android:fontFamily="@font/spoqahansansneo_bold"
+                    android:text="인기 꽃집"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_marginLeft="10dp">
+                    android:layout_marginLeft="10dp"
+                    android:orientation="horizontal">
+
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recycler1"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent" />
                 </LinearLayout>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
@@ -60,19 +61,19 @@
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="인기 꽃 상품"
-                    android:textSize="20dp"
-                    android:fontFamily="@font/spoqahansansneo_bold"
-                    android:textColor="@color/black"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"/>
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/spoqahansansneo_bold"
+                    android:text="인기 꽃 상품"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_marginLeft="10dp">
+                    android:layout_marginLeft="10dp"
+                    android:orientation="horizontal">
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recycler2"
@@ -80,6 +81,7 @@
                         android:layout_height="match_parent" />
                 </LinearLayout>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
@@ -89,36 +91,95 @@
                     android:id="@+id/textView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="할인 꽃 상품"
-                    android:textSize="20dp"
-                    android:fontFamily="@font/spoqahansansneo_bold"
-                    android:textColor="@color/black"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"/>
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/spoqahansansneo_bold"
+                    android:text="할인 꽃 상품"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_marginLeft="10dp">
+                    android:layout_marginLeft="10dp"
+                    android:orientation="horizontal">
+
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recycler3"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" />
                 </LinearLayout>
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/spoqahansansneo_bold"
+                android:text="오늘의 컨텐츠"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="50dp" >
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical"
+                android:paddingHorizontal="24dp">
+
                 <ImageView
-                    android:id="@+id/contentsView"
+                    android:id="@+id/contentsView1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/contents_img"
                     android:adjustViewBounds="true"
-                    />
+                    android:src="@drawable/content_img1" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="11dp"
+                    android:text="꽃으로 물드는 우리집! 플라워 인테리어"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:text="봄을 닮은 꽃으로 집 안의 분위기 바꾸기"
+                    android:textColor="#8E8C94"
+                    android:textSize="10sp" />
+
+                <ImageView
+                    android:id="@+id/contentsView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/content_img2" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="11dp"
+                    android:text="선물하기 좋은 MBTI별 꽃 추천 🌸"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:text="소소한 사람에게 감동 100배 꽃 선물 해보기!"
+                    android:textColor="#8E8C94"
+                    android:textSize="10sp" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

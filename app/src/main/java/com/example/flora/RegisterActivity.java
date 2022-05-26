@@ -24,7 +24,7 @@ import retrofit2.Response;
 public class RegisterActivity extends AppCompatActivity {
 
     EditText editId, editUsername, editPassword, editPasswordConfirm, editPhone;
-    Button btnRegister;
+    Button btnBack, btnRegister;
     CheckBox chkTotalAgree, chkInfoAgree, chkUseAgree;
     TextView checkId;
 
@@ -40,6 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
         editPasswordConfirm = findViewById(R.id.et_passconfirm);
         editPhone = findViewById(R.id.et_phone);
 
+        btnBack = findViewById(R.id.btn_back);
         btnRegister = findViewById(R.id.btn_register);
 
         chkTotalAgree = findViewById(R.id.checkBox_total_agree);
@@ -48,6 +49,14 @@ public class RegisterActivity extends AppCompatActivity {
 
         // move to main
         Intent moveLoginActivity = new Intent(this, LoginActivity.class);
+
+        // 뒤로가기 버튼
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         // validate-email : id
         editId.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -122,4 +131,5 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
     }
+
 }

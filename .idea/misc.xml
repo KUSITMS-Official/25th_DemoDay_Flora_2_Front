@@ -3,17 +3,64 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/drawable/circle_button.xml" value="0.242" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/drawable/circle_shadow.xml" value="0.285" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/drawable/content_img1.xml" value="0.141" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/drawable/filter_content.xml" value="0.19" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/drawable/filter_dialog_box.xml" value="0.121" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/drawable/header_stroke.xml" value="0.3625" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/drawable/ic_chat.xml" value="0.1" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/drawable/ic_check.xml" value="0.1" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/drawable/ic_content1.xml" value="0.141" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/drawable/ic_feed.xml" value="0.1" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/drawable/ic_filter.xml" value="0.1" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/drawable/ic_heart.xml" value="0.1" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/drawable/ic_home.xml" value="0.1" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/drawable/ic_ico_check.xml" value="0.121" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/drawable/ic_ico_map_pin.xml" value="0.1" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/drawable/ic_kakao_button.xml" value="0.242" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/drawable/ic_map_pin.xml" value="0.3065" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/drawable/ic_right_arrow.xml" value="0.1" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/drawable/ic_user.xml" value="0.1" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/drawable/image_border.xml" value="0.1" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/drawable/menu_selector_color.xml" value="0.1" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/drawable/profile_image.xml" value="0.19" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/drawable/search_input.xml" value="0.3625" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/drawable/seekbar_bar.xml" value="0.242" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/drawable/seekbar_thumb.xml" value="0.242" />
         <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/drawable/simple_input.xml" value="0.1145" />
         <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/drawable/white_button.xml" value="0.1145" />
         <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/drawable/yellow_button.xml" value="0.1145" />
-        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/layout/activity_after_search_page.xml" value="0.14130434782608695" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/drawable/yes_button.xml" value="0.242" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/layout/activity_after_reservation.xml" value="0.24427083333333333" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/layout/activity_after_search_page.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/layout/activity_feed_see_product.xml" value="0.24427083333333333" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/layout/activity_location_setting.xml" value="0.2109704641350211" />
         <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/layout/activity_main.xml" value="0.20175438596491227" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/layout/activity_order_list.xml" value="0.17708333333333334" />
         <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/layout/activity_register.xml" value="0.22" />
-        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/layout/fragment_feed.xml" value="0.17708333333333334" />
-        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/layout/fragment_home.xml" value="0.17708333333333334" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/layout/activity_reservation.xml" value="0.24427083333333333" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/layout/activity_search_map.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/layout/activity_search_page.xml" value="0.19814814814814816" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/layout/feed_recycler_item.xml" value="0.561344537815126" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/layout/filter_dialog.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/layout/fragment_chat.xml" value="0.17708333333333334" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/layout/fragment_feed.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/layout/fragment_home.xml" value="0.22" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/layout/fragment_pick.xml" value="0.1" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/layout/fragment_setting.xml" value="0.11911231884057971" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/layout/home_recycler_item.xml" value="0.3645833333333333" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/layout/home_recycler_item3.xml" value="0.3645833333333333" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/layout/menu_selector_color.xml" value="0.1" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/layout/row_listview.xml" value="0.22" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/layout/search_recycler_item.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/layout/search_word_recycler_item.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/layout/toolbar.xml" value="0.22" />
+        <entry key="..\:/Users/shinh/AndroidStudioProjects/Flora/app/src/main/res/menu/bottom_navigation_view.xml" value="0.5" />
       </map>
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK" />
 </project>
