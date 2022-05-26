@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
-    //Custom BottomNavigationView TextSize
-    <dimen name="design_bottom_navigation_text_size" tools:override="true">10sp</dimen>
-    <dimen name="design_bottom_navigation_active_text_size" tools:override="true">10sp</dimen>
+
+<resources>
+    <!--
+    <dimen name="_8">240dp</dimen>
+    <dimen name="drawer_text">20sp</dimen>
+    <dimen name="title_text">16sp</dimen>
+    <dimen name="bt_height">36dp</dimen>
+    <dimen name="row_top_margin">15dp</dimen>
+    <dimen name="row_left_margin">5dp</dimen>
+    <dimen name="row_right_margin">5dp</dimen>
+    <dimen name="row_bottom_margin">15dp</dimen>
+   -->
 </resources>

@@ -119,4 +119,6 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/next_btn"
         android:adjustViewBounds="true"/>
+
+
 </LinearLayout>
