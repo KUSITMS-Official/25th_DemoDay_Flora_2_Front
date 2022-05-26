@@ -1,37 +1,19 @@
 package com.example.flora;
 
 public class HomeItem {
-    String flowerShopImage;
-    String portfolioImage;
+    String profileImage;
     String title;
     String context;
-    String price;
-    String discount;
 
-    public HomeItem(String flowerShopImage, String portfolioImage, String title, String context, String price, String discount) {
-        this.flowerShopImage = flowerShopImage;
-        this.portfolioImage = portfolioImage;
+    public HomeItem(String profileImage, String title, String context) {
+        this.profileImage = profileImage;
         this.title = title;
         this.context = context;
-        this.price= price;
-        this.discount = discount;
 
     }
 
-    public HomeItem(String flowerShopImage, String portfolioImage, String title, String context, String price) {
-        this.flowerShopImage = flowerShopImage;
-        this.portfolioImage = portfolioImage;
-        this.title = title;
-        this.context = context;
-        this.price= price;
 
-    }
-
-    public String getFlowerShopImage() {
-        return flowerShopImage;
-    }
-
-    public String getPortfolioImage() { return portfolioImage; }
+    public String getProfileImage() { return profileImage; }
 
     public String getTitle() {
         return title;
@@ -41,21 +23,8 @@ public class HomeItem {
         return context;
     }
 
-    public String getPrice() {
-        return price;
-    }
-
-    public String getDiscount() {
-        return discount;
-    }
-
-    public void setFlowerShopImage(String flowerShopImage) {
-        this.flowerShopImage = flowerShopImage;
-    }
-
-
-    public void setPortfolioImage(String portfolioImage) {
-        this.portfolioImage = portfolioImage;
+    public void setProfileImage(String profileImage) {
+        this.profileImage = profileImage;
     }
 
     public void setTitle(String title) {
@@ -64,14 +33,6 @@ public class HomeItem {
 
     public void setContext(String context) {
         this.context = context;
-    }
-
-    public void setPrice(String price) {
-        this.price = price;
-    }
-
-    public void setDiscount(String discount) {
-        this.discount = discount;
     }
 
 }

@@ -66,6 +66,7 @@ public class SearchMapActivity extends AppCompatActivity implements OnMapReadyCa
 
         // MainActivity
         Intent intentMainActivity = new Intent(this, MainActivity.class);
+        Intent intentLocationSettingActivity = new Intent(this, LocationSetting.class);
 
         // 주소 표시 텍스트 뷰
         addressView = findViewById(R.id.addressLocation);

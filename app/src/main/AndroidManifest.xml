@@ -8,9 +8,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/flora_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/flora_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Flora"
         android:usesCleartextTraffic="true">
