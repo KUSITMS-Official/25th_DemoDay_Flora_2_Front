@@ -19,13 +19,14 @@ public class FeedSeeProduct extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed_see_product);
 
-        reservation_button = (ImageView) findViewById(R.id.arrowButton);
+        reservation_button = (ImageView) findViewById(R.id.reservation_button);
 
         reservation_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(FeedSeeProduct.this, ReservationActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 

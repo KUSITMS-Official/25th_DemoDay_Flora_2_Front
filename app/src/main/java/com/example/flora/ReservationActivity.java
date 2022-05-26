@@ -36,7 +36,7 @@ public class ReservationActivity extends AppCompatActivity {
     private MaterialCalendarView calendarView;
     public ReservationRecyclerAdapter mRecyclerAdapter;
     public ArrayList<ReservationItem> mReservationItems;
-    private ImageView reservation_button;
+    private ImageView next_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,13 +45,14 @@ public class ReservationActivity extends AppCompatActivity {
 
         RecyclerView mRecyclerView = findViewById(R.id.recycler);
 
-        reservation_button = (ImageView) findViewById(R.id.arrowButton);
+        next_btn = (ImageView) findViewById(R.id.next_btn);
 
-        reservation_button.setOnClickListener(new View.OnClickListener() {
+        next_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ReservationActivity.this, AfterReservationActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 

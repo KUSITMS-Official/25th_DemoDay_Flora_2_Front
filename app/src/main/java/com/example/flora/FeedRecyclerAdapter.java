@@ -7,6 +7,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 import org.jetbrains.annotations.NotNull;
 
@@ -17,25 +19,11 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
 
     private ArrayList<FeedItem> mFeedList;
 
-    public interface OnItemClickListener {
-        void onItemClicked(int position, String data);
-    }
-
-    // OnItemClickListener 참조 변수 선언
-    private OnItemClickListener itemClickListener;
-
-    // OnItemClickListener 전달 메소드
-    public void setOnItemClickListener (OnItemClickListener listener) {
-        itemClickListener = listener;
-    }
-
     @NonNull
     @NotNull
     @Override
     public FeedRecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.feed_recycler_item, parent, false);
-
-        FeedRecyclerAdapter.ViewHolder viewHolder = new FeedRecyclerAdapter.ViewHolder(view);
 
         return new ViewHolder(view);
 

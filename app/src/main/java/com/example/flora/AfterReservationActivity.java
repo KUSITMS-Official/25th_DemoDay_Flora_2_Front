@@ -16,13 +16,14 @@ public class AfterReservationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_after_reservation);
 
-        reservation_button = (ImageView) findViewById(R.id.arrowButton);
+        reservation_button = (ImageView) findViewById(R.id.reservation_button);
 
         reservation_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AfterReservationActivity.this, ChatFragment.class);
+                Intent intent = new Intent(AfterReservationActivity.this, MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
