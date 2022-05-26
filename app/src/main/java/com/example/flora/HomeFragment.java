@@ -20,6 +20,8 @@ import android.widget.Toast;
 
 import com.example.flora.response.FlowerShopListResponse;
 import com.example.flora.response.FlowerShopResponse;
+import com.example.flora.response.PortfolioListResponse;
+import com.example.flora.response.PortfolioResponse;
 import com.example.flora.response.UserResponse;
 import com.naver.maps.geometry.LatLng;
 import com.naver.maps.map.CameraPosition;
@@ -59,9 +61,9 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
     public HomeRecyclerAdapter mRecyclerAdapter;
     public HomeRecyclerAdapter2 mRecyclerAdapter2;
     public HomeRecyclerAdapter3 mRecyclerAdapter3;
-    public ArrayList<HomeItem> mHomeItems1;
+    public ArrayList<FeedItem> mHomeItems1;
     public ArrayList<HomeItem2> mHomeItems2;
-    public ArrayList<HomeItem3> mHomeItems3;
+    public ArrayList<FeedItem> mHomeItems3;
     private static final String TAG = "MainActivity";
 
     private static final int PERMISSION_REQUEST_CODE = 100;
@@ -192,14 +194,8 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
         mRecyclerView3.setAdapter(mRecyclerAdapter3);
 
         /* adapt data */
-        mHomeItems1 = new ArrayList<>();
-        mHomeItems1.add(new HomeItem(R.drawable.temp_rec_img,"프리지어"));
-        mHomeItems1.add(new HomeItem(R.drawable.temp_rec_img,"Forever"));
-        mHomeItems1.add(new HomeItem(R.drawable.temp_rec_img,"Yucca"));
-        mHomeItems1.add(new HomeItem(R.drawable.temp_rec_img,"프리지어"));
-        mHomeItems1.add(new HomeItem(R.drawable.temp_rec_img,"Forever"));
-        mHomeItems1.add(new HomeItem(R.drawable.temp_rec_img,"Yucca"));
-        mRecyclerAdapter.setHomeList(mHomeItems1);
+        getHotPortfolios(token);
+        mRecyclerAdapter.setHotList(getContext(), mHomeItems1);
 
         mHomeItems2 = new ArrayList<>();
         mHomeItems2.add(new HomeItem2(R.drawable.temp_rec_img));
@@ -210,14 +206,8 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
         mHomeItems2.add(new HomeItem2(R.drawable.temp_rec_img));
         mRecyclerAdapter2.setHomeList2(mHomeItems2);
 
-        mHomeItems3 = new ArrayList<>();
-        mHomeItems3.add(new HomeItem3(R.drawable.temp_rec_img));
-        mHomeItems3.add(new HomeItem3(R.drawable.temp_rec_img));
-        mHomeItems3.add(new HomeItem3(R.drawable.temp_rec_img));
-        mHomeItems3.add(new HomeItem3(R.drawable.temp_rec_img));
-        mHomeItems3.add(new HomeItem3(R.drawable.temp_rec_img));
-        mHomeItems3.add(new HomeItem3(R.drawable.temp_rec_img));
-        mRecyclerAdapter3.setHomeList3(mHomeItems3);
+        getSalePortfolios(token);
+        mRecyclerAdapter3.setSaleList(getContext(), mHomeItems3);
 
         return rootView;
     }
@@ -392,6 +382,78 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
                 mNaverMap.setLocationTrackingMode(LocationTrackingMode.Follow);
             }
         }
+    }
+
+    private void getHotPortfolios(String token) {
+        Call<PortfolioListResponse> portfolioListCall3 = RetrofitClient.getAPIService().getHotPortfolio(token);
+
+        portfolioListCall3.enqueue(new Callback<PortfolioListResponse>() {
+            @Override
+            public void onResponse(Call<PortfolioListResponse> call, Response<PortfolioListResponse> response) {
+                PortfolioListResponse resource = response.body();
+                List<PortfolioResponse> dataList = resource.getData();
+                mHomeItems1 = new ArrayList<>();
+                if (dataList != null && dataList.size() != 0) {
+                    for (PortfolioResponse data : dataList) {
+                        int discount = data.getDiscount();
+                        int price = data.getPrice();
+                        String priceFormat = String.format("%,d원", price);
+                        System.out.println(priceFormat);
+                        if (discount == 0) {
+                            mHomeItems1.add(new FeedItem(data.getPortfolioImage(), data.getFlowerShopResponse().getFlowerShopImage(),
+                                    data.getFlowerShopResponse().getFlowerShopName(), data.getPortfolioName(), priceFormat, ""));
+                        } else {
+                            mHomeItems1.add(new FeedItem(data.getPortfolioImage(), data.getFlowerShopResponse().getFlowerShopImage(),
+                                    data.getFlowerShopResponse().getFlowerShopName(), data.getPortfolioName(), priceFormat, discount + "%"));
+                        }
+
+                    }
+                }
+                mRecyclerAdapter.setHotList(getContext(), mHomeItems1);
+                mRecyclerAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call<PortfolioListResponse> call, Throwable t) {
+                Log.e("연결실패", t.getMessage());
+            }
+        });
+    }
+
+    private void getSalePortfolios(String token) {
+        Call<PortfolioListResponse> portfolioListCall3 = RetrofitClient.getAPIService().getSalePortfolio(token);
+
+        portfolioListCall3.enqueue(new Callback<PortfolioListResponse>() {
+            @Override
+            public void onResponse(Call<PortfolioListResponse> call, Response<PortfolioListResponse> response) {
+                PortfolioListResponse resource = response.body();
+                List<PortfolioResponse> dataList = resource.getData();
+                mHomeItems3 = new ArrayList<>();
+                if (dataList != null && dataList.size() != 0) {
+                    for (PortfolioResponse data : dataList) {
+                        int discount = data.getDiscount();
+                        int price = data.getPrice();
+                        String priceFormat = String.format("%,d원", price);
+                        System.out.println(priceFormat);
+                        if (discount == 0) {
+                            mHomeItems3.add(new FeedItem(data.getPortfolioImage(), data.getFlowerShopResponse().getFlowerShopImage(),
+                                    data.getFlowerShopResponse().getFlowerShopName(), data.getPortfolioName(), priceFormat, ""));
+                        } else {
+                            mHomeItems3.add(new FeedItem(data.getPortfolioImage(), data.getFlowerShopResponse().getFlowerShopImage(),
+                                    data.getFlowerShopResponse().getFlowerShopName(), data.getPortfolioName(), priceFormat, discount + "%"));
+                        }
+
+                    }
+                }
+                mRecyclerAdapter.setHotList(getContext(), mHomeItems3);
+                mRecyclerAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call<PortfolioListResponse> call, Throwable t) {
+                Log.e("연결실패", t.getMessage());
+            }
+        });
     }
 
 }

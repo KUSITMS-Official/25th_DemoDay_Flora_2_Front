@@ -45,7 +45,15 @@ public interface RetrofitApi {
                              @Path("latitude") Double latitude,
                              @Path("longitude") Double longitude);
 
-    // 피드 가져오기
+    // 전체 꽃집
+    @GET("/api/v1/flowershop/flowershops")
+    Call<FlowerShopListResponse> getFlowerShop(@Header("Authorization") String Authorization);
+
+    // 전체 피드
+    @GET("/api/v1/portfolio/")
+    Call<PortfolioListResponse> getPortfolio(@Header("Authorization") String Authorization);
+
+    // 필터링 피드
     @GET("/api/v1/portfolio/filter")
     Call<PortfolioListResponse> filterPortfolio(@Header("Authorization") String Authorization,
                                                 @Query("color") String color,
@@ -55,11 +63,15 @@ public interface RetrofitApi {
                                                 @Query("sort") String sort
                                             );
 
-    // 전체 피드 가져오기
-    @GET("/api/v1/portfolio/")
-    Call<PortfolioListResponse> getPortfolio(@Header("Authorization") String Authorization);
+    // 인기 꽃 상품
+    @GET("/api/v1/portfolio/hot")
+    Call<PortfolioListResponse> getHotPortfolio(@Header("Authorization") String Authorization);
 
-    // 전체 꽃집 가져오기
-    @GET("/api/v1/flowershop/flowershops")
-    Call<FlowerShopListResponse> getFlowerShop(@Header("Authorization") String Authorization);
+    // 인기 꽃집
+    @GET("/api/v1/flowershop/hot")
+    Call<FlowerShopListResponse> getHotFlowerShop(@Header("Authorization") String Authorization);
+
+    // 할인 꽃 상품
+    @GET("/api/v1/portfolio/sale")
+    Call<PortfolioListResponse> getSalePortfolio(@Header("Authorization") String Authorization);
 }
