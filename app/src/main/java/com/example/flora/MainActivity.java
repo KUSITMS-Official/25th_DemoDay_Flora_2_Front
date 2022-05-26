@@ -18,19 +18,28 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.example.flora.response.UserResponse;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
 import static android.content.ContentValues.TAG;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class MainActivity extends AppCompatActivity {
 
     public ImageView ivMenu;
     public ImageView menu_search;
     public Toolbar toolbar;
+    public TextView tvLocation;
+    String token;
 
     FeedFragment peedFragment;
     ChatFragment chatFragment;
@@ -53,18 +62,44 @@ public class MainActivity extends AppCompatActivity {
         //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
+        token=getIntent().getExtras().getString("access_token");
         ivMenu=findViewById(R.id.iv_menu);
         menu_search=findViewById(R.id.menu_search);
         toolbar=findViewById(R.id.toolbar);
+        tvLocation=findViewById(R.id.tv_location);
 
         //액션바 변경하기(들어갈 수 있는 타입 : Toolbar type
         setSupportActionBar(toolbar);
+
+        Call<UserResponse> user = RetrofitClient.getAPIService().getUserInfo(token);
+        user.enqueue(new Callback<UserResponse>() {
+            @Override
+            public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
+                if(response.isSuccessful()) {
+                    Log.d("연결이 성공적 : ", response.body().toString());
+                    UserResponse data = response.body();
+                    String address = data.getUserAddress();
+                    if(!address.equals(null)) {
+                        String[] splitAddress = address.split(" ");
+                        tvLocation.setText(new StringBuilder().append(splitAddress[1] + " " + splitAddress[2]));
+                    }
+                } else {
+                    Log.e("연결이 비정상적 : ", "error code : " + response.code());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UserResponse> call, Throwable t) {
+                Log.e("연결실패", t.getMessage());
+            }
+        });
 
         ivMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: 클릭됨");
                 Intent intent = new Intent(MainActivity.this, LocationSetting.class);
+                intent.putExtra("access_token", token);
                 startActivity(intent);
             }
         });
@@ -74,6 +109,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Log.d(TAG, "onClick: 클릭됨");
                 Intent intent = new Intent(MainActivity.this, SearchPage.class);
+                intent.putExtra("access_token", token);
                 startActivity(intent);
             }
         });

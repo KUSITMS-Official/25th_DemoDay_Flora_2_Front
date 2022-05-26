@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="bottom"
+    android:background="@drawable/filter_dialog_box"
+    android:orientation="vertical"
+    android:paddingVertical="18dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="필터"
+            android:textColor="#1D1929"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/noBtn"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/ic_cancel_black" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginVertical="18dp"
+        android:background="#F1F2F5" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="24dp"
+        android:text="거리"
+        android:textColor="#8E8C94"
+        android:textSize="16dp" />
+
+    <com.jaygoo.widget.RangeSeekBar
+        android:id="@+id/seek_bar_distance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="4dp"
+        android:layout_marginHorizontal="20dp"
+        app:rsb_gravity="bottom"
+        app:rsb_mode="single"
+        app:rsb_progress_color="#FFE83A"
+        app:rsb_progress_default_color="#E8E8EA"
+        app:rsb_progress_radius="10dp"
+        app:rsb_progress_height="6dp"
+        app:rsb_thumb_drawable="@drawable/seekbar_thumb"
+        app:rsb_max="5"
+        app:rsb_min="0"
+        app:rsb_indicator_show_mode="alwaysHide"
+        app:rsb_tick_mark_mode="other"
+        app:rsb_tick_mark_text_array="@array/distance"
+        app:rsb_tick_mark_text_size="12sp"
+        app:rsb_tick_mark_text_margin="15dp"
+        app:rsb_tick_mark_text_color="#BBBABF"
+        app:rsb_tick_mark_layout_gravity="top"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:paddingHorizontal="24dp"
+        android:text="컬러"
+        android:textColor="#8E8C94"
+        android:textSize="16dp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="12dp">
+
+        <RadioButton
+            android:id="@+id/color1"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/circle_button"
+            android:backgroundTint="#CF0623"
+            android:backgroundTintMode="screen"
+            android:button="@null"
+            android:elevation="4dp"
+            android:shadowColor="#757575" />
+
+        <RadioButton
+            android:id="@+id/color2"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/circle_button"
+            android:backgroundTint="#FF9217"
+            android:backgroundTintMode="screen"
+            android:button="@null"
+            android:elevation="4dp"
+            android:shadowColor="#757575" />
+
+        <RadioButton
+            android:id="@+id/color3"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/circle_button"
+            android:backgroundTint="#FFC900"
+            android:backgroundTintMode="screen"
+            android:button="@null"
+            android:elevation="4dp"
+            android:shadowColor="#757575" />
+
+        <RadioButton
+            android:id="@+id/color4"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/circle_button"
+            android:backgroundTint="#89CBB0"
+            android:backgroundTintMode="screen"
+            android:button="@null"
+            android:elevation="4dp"
+            android:shadowColor="#757575" />
+
+        <RadioButton
+            android:id="@+id/color5"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/circle_button"
+            android:backgroundTint="#0058D9"
+            android:backgroundTintMode="screen"
+            android:button="@null"
+            android:elevation="4dp"
+            android:shadowColor="#757575" />
+
+        <RadioButton
+            android:id="@+id/color6"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/circle_button"
+            android:backgroundTint="#A0C5FF"
+            android:backgroundTintMode="screen"
+            android:button="@null"
+            android:elevation="4dp"
+            android:shadowColor="#757575" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp"
+        android:paddingBottom="12dp">
+
+
+        <RadioButton
+            android:id="@+id/color7"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/circle_button"
+            android:backgroundTint="#E36FA2"
+            android:backgroundTintMode="screen"
+            android:button="@null"
+            android:elevation="4dp"
+            android:shadowColor="#757575" />
+
+        <RadioButton
+            android:id="@+id/color8"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/circle_button"
+            android:backgroundTint="#BE5CE0"
+            android:backgroundTintMode="screen"
+            android:button="@null"
+            android:elevation="4dp"
+            android:shadowColor="#757575" />
+
+        <RadioButton
+            android:id="@+id/color9"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/circle_button"
+            android:backgroundTint="#FFFFFF"
+            android:backgroundTintMode="screen"
+            android:button="@null"
+            android:elevation="4dp"
+            android:shadowColor="#757575" />
+
+        <RadioButton
+            android:id="@+id/color10"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/circle_button"
+            android:backgroundTint="#E5C89C"
+            android:backgroundTintMode="screen"
+            android:button="@null"
+            android:elevation="4dp"
+            android:shadowColor="#757575" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="24dp"
+        android:text="가격"
+        android:textColor="#8E8C94"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/text_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="12dp"
+        android:paddingHorizontal="24dp"
+        android:text="0원 ~ 0원"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <com.jaygoo.widget.RangeSeekBar
+        android:id="@+id/seek_bar_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="4dp"
+        android:layout_marginHorizontal="20dp"
+        app:rsb_gravity="bottom"
+        app:rsb_mode="range"
+        app:rsb_progress_color="#FFE83A"
+        app:rsb_progress_default_color="#E8E8EA"
+        app:rsb_progress_radius="10dp"
+        app:rsb_progress_height="6dp"
+        app:rsb_thumb_drawable="@drawable/seekbar_thumb"
+        app:rsb_max="100000"
+        app:rsb_min="0"
+        app:rsb_indicator_show_mode="alwaysHide"
+        app:rsb_tick_mark_mode="other"
+        app:rsb_tick_mark_text_array="@array/price"
+        app:rsb_tick_mark_text_size="12sp"
+        app:rsb_tick_mark_text_margin="15dp"
+        app:rsb_tick_mark_text_color="#BBBABF"
+        app:rsb_tick_mark_layout_gravity="top"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:paddingHorizontal="24dp">
+
+        <Button
+            android:id="@+id/resetBtn"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="초기화"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/yesBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/yes_button"
+            android:text="선택완료"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</LinearLayout>
+
+

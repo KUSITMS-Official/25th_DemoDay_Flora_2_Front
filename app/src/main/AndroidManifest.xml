@@ -3,6 +3,8 @@
     package="com.example.flora">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -12,11 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Flora"
         android:usesCleartextTraffic="true">
-        <activity android:name=".AfterSearchPage"></activity>
+        <activity android:name=".AfterSearchPage" />
         <activity android:name=".SearchPage" />
         <activity android:name=".OrderList" />
         <activity
             android:name=".LocationSetting"
+            android:exported="true" />
+        <activity
+            android:name=".SearchMapActivity"
             android:exported="true" />
         <activity
             android:name=".RegisterActivity"
@@ -29,10 +34,12 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="com.naver.maps.map.CLIENT_ID"
+            android:value="8fz6aeboa3" />
     </application>
 
 </manifest>

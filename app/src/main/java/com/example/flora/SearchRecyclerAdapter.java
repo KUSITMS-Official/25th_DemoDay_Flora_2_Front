@@ -45,8 +45,8 @@ public class SearchRecyclerAdapter extends RecyclerView.Adapter<SearchRecyclerAd
         ImageView profileImage;
         TextView titleTv;
         TextView contextTv;
-        TextView discountTv;
         TextView priceTv;
+        TextView discountTv;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -55,8 +55,8 @@ public class SearchRecyclerAdapter extends RecyclerView.Adapter<SearchRecyclerAd
             profileImage = (ImageView) itemView.findViewById(R.id.profileImage);
             titleTv = (TextView) itemView.findViewById(R.id.titleTv);
             contextTv = (TextView) itemView.findViewById(R.id.contextTv);
-            discountTv = (TextView) itemView.findViewById(R.id.discountTv);
             priceTv = (TextView) itemView.findViewById(R.id.priceTv);
+            discountTv = (TextView) itemView.findViewById(R.id.discountTv);
         }
 
         void onBind(SearchItem item){
@@ -64,8 +64,8 @@ public class SearchRecyclerAdapter extends RecyclerView.Adapter<SearchRecyclerAd
             profileImage.setImageResource(item.getResourceProfileId());
             titleTv.setText(item.getTitle());
             contextTv.setText(item.getContext());
+            priceTv.setText(item.getPrice());
             discountTv.setText(item.getDiscount());
-            discountTv.setText(item.getPrice());
         }
     }
 

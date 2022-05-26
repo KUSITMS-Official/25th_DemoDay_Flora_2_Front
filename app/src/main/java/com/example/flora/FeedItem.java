@@ -1,30 +1,37 @@
 package com.example.flora;
 
 public class FeedItem {
-    int resourceFlowerId;
-    int resourceProfileId;
+    String flowerShopImage;
+    String portfolioImage;
     String title;
     String context;
-    String discount;
     String price;
+    String discount;
 
-    public FeedItem(int resourceFlowerId, int resourceProfileId, String title, String context, String discount, String price) {
-        this.resourceFlowerId = resourceFlowerId;
-        this.resourceProfileId = resourceProfileId;
+    public FeedItem(String flowerShopImage, String portfolioImage, String title, String context, String price, String discount) {
+        this.flowerShopImage = flowerShopImage;
+        this.portfolioImage = portfolioImage;
         this.title = title;
         this.context = context;
+        this.price= price;
         this.discount = discount;
+
+    }
+
+    public FeedItem(String flowerShopImage, String portfolioImage, String title, String context, String price) {
+        this.flowerShopImage = flowerShopImage;
+        this.portfolioImage = portfolioImage;
+        this.title = title;
+        this.context = context;
         this.price= price;
 
     }
 
-    public int getResourceFlowerId() {
-        return resourceFlowerId;
+    public String getFlowerShopImage() {
+        return flowerShopImage;
     }
 
-    public int getResourceProfileId() {
-        return resourceProfileId;
-    }
+    public String getPortfolioImage() { return portfolioImage; }
 
     public String getTitle() {
         return title;
@@ -34,22 +41,21 @@ public class FeedItem {
         return context;
     }
 
-    public String getDiscount() {
-        return discount;
-    }
-
     public String getPrice() {
         return price;
     }
 
+    public String getDiscount() {
+        return discount;
+    }
 
-    public void setResourceFlowerId(int resourceFlowerId) {
-        this.resourceFlowerId = resourceFlowerId;
+    public void setFlowerShopImage(String flowerShopImage) {
+        this.flowerShopImage = flowerShopImage;
     }
 
 
-    public void setResourceProfileId(int resourceProfileId) {
-        this.resourceProfileId = resourceProfileId;
+    public void setPortfolioImage(String portfolioImage) {
+        this.portfolioImage = portfolioImage;
     }
 
     public void setTitle(String title) {
@@ -60,12 +66,12 @@ public class FeedItem {
         this.context = context;
     }
 
-    public void setDiscount(String discount) {
-        this.discount = discount;
-    }
-
     public void setPrice(String price) {
         this.price = price;
+    }
+
+    public void setDiscount(String discount) {
+        this.discount = discount;
     }
 
 }

@@ -1,5 +1,6 @@
 package com.example.flora;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -15,6 +19,7 @@ import java.util.ArrayList;
 
 public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapter.ViewHolder> {
 
+    private Context context;
     private ArrayList<FeedItem> mFeedList;
 
     @NonNull
@@ -30,7 +35,8 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
         holder.onBind(mFeedList.get(position));
     }
 
-    public void setFeedList(ArrayList<FeedItem> list){
+    public void setFeedList(Context context, ArrayList<FeedItem> list){
+        this.context = context;
         this.mFeedList = list;
         notifyDataSetChanged();
     }
@@ -45,8 +51,8 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
         ImageView profileImage;
         TextView titleTv;
         TextView contextTv;
-        TextView discountTv;
         TextView priceTv;
+        TextView discountTv;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -55,17 +61,17 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
             profileImage = (ImageView) itemView.findViewById(R.id.profileImage);
             titleTv = (TextView) itemView.findViewById(R.id.titleTv);
             contextTv = (TextView) itemView.findViewById(R.id.contextTv);
-            discountTv = (TextView) itemView.findViewById(R.id.discountTv);
             priceTv = (TextView) itemView.findViewById(R.id.priceTv);
+            discountTv = (TextView) itemView.findViewById(R.id.discountTv);
         }
 
         void onBind(FeedItem item){
-            flowerImage.setImageResource(item.getResourceFlowerId());
-            profileImage.setImageResource(item.getResourceProfileId());
+            Glide.with(context).load(item.getFlowerShopImage()).into(flowerImage);
+            Glide.with(context).load(item.getPortfolioImage()).into(profileImage);
             titleTv.setText(item.getTitle());
             contextTv.setText(item.getContext());
+            priceTv.setText(item.getPrice());
             discountTv.setText(item.getDiscount());
-            discountTv.setText(item.getPrice());
         }
     }
 
