@@ -28,12 +28,13 @@
                 android:src="@drawable/flower_temp1" />
 
             <ImageView
+                android:id="@+id/clip"
                 android:layout_width="18dp"
                 android:layout_height="18dp"
                 android:layout_gravity="right|bottom"
                 android:layout_margin="10dp"
                 android:adjustViewBounds="true"
-                android:src="@drawable/heart_empty_img" />
+                android:src="@drawable/ic_heart" />
         </androidx.cardview.widget.CardView>
 
         <LinearLayout

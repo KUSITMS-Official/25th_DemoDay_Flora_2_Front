@@ -33,7 +33,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="12dp"
         android:padding="5dp"
-        android:src="@drawable/arrow_button"
+        android:src="@drawable/ic_left_arrow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/black" />
