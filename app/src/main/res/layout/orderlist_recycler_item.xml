@@ -41,13 +41,6 @@
                 app:srcCompat="@drawable/order_detail_button" />
 
         </LinearLayout>
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/line5"
-            android:adjustViewBounds="true"
-            />
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -69,9 +62,10 @@
                 <ImageView
                     android:id="@+id/flowerImage"
                     android:layout_marginTop="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
                     android:src="@drawable/order_flower_temp"
+                    android:background="@drawable/round"
                     android:adjustViewBounds="true"
                     />
                 <LinearLayout
