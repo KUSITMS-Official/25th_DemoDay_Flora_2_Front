@@ -7,6 +7,7 @@ public class FeedItem {
     String context;
     String price;
     String discount;
+    Boolean clip;
 
     public FeedItem(String flowerShopImage, String portfolioImage, String title, String context, String price, String discount) {
         this.flowerShopImage = flowerShopImage;
@@ -49,6 +50,8 @@ public class FeedItem {
         return discount;
     }
 
+    public Boolean getClip() { return clip; }
+
     public void setFlowerShopImage(String flowerShopImage) {
         this.flowerShopImage = flowerShopImage;
     }
@@ -73,5 +76,7 @@ public class FeedItem {
     public void setDiscount(String discount) {
         this.discount = discount;
     }
+
+    public void setClip(Boolean clip) {this.clip = clip; }
 
 }

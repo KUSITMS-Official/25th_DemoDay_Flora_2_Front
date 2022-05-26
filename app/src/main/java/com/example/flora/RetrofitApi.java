@@ -99,4 +99,11 @@ public interface RetrofitApi {
     @GET("/api/v1/clip/shop/unclip/{flowerShopId}")
     Call<Void> unClipFlowerShop(@Header("Authorization") String Authorization, @Path("flowerShopId") String flowerShopId);
 
+    // 사용자 꽃 상품 찜 여부 조회
+    @GET("/api/v1/clip/shop/check/{portfolioId}")
+    Call<Boolean> checkClipPortfolio(@Header("Authorization") String Authorization, @Path("portfolioId") String portfolioId);
+
+    // 사용자 꽃집 찜 여부 조회
+    @GET("/api/v1/clip/shop/check/{portfolioId}")
+    Call<Boolean> checkClipFlowerShop(@Header("Authorization") String Authorization, @Path("flowerShopId") String flowerShopId);
 }
