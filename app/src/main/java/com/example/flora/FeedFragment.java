@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.core.graphics.drawable.DrawableCompat;
@@ -28,6 +29,7 @@ import com.example.flora.response.PortfolioResponse;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.jaygoo.widget.OnRangeChangedListener;
 import com.jaygoo.widget.RangeSeekBar;
+import android.widget.AdapterView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -119,6 +121,7 @@ public class FeedFragment extends Fragment {
         // 피드 불러오기
         RecyclerView mRecyclerView = rootView.findViewById(R.id.recycler);
 
+
 //        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 //        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL,false));
 
@@ -163,7 +166,6 @@ public class FeedFragment extends Fragment {
         deleteDistance.setOnClickListener(clickDelete);
         deleteColor.setOnClickListener(clickDelete);
         deletePrice.setOnClickListener(clickDelete);
-
         return rootView;
     }
 
@@ -388,7 +390,7 @@ public class FeedFragment extends Fragment {
         }
     };
 
-    public void getPortfolios(String token, String color, Double distance, int priceStart, int priceEnd, String sort) {
+    private void getPortfolios(String token, String color, Double distance, int priceStart, int priceEnd, String sort) {
         Call<PortfolioListResponse> portfolioListCall3 = RetrofitClient.getAPIService().filterPortfolio(token, color, distance, priceStart, priceEnd, sort);
 
         portfolioListCall3.enqueue(new Callback<PortfolioListResponse>() {

@@ -24,8 +24,13 @@ import android.widget.TextView;
 
 import com.example.flora.response.UserResponse;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.prolificinteractive.materialcalendarview.CalendarDay;
+import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
+import com.prolificinteractive.materialcalendarview.format.TitleFormatter;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import static android.content.ContentValues.TAG;
 
@@ -62,11 +67,11 @@ public class MainActivity extends AppCompatActivity {
         //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
-        token=getIntent().getExtras().getString("access_token");
-        ivMenu=findViewById(R.id.iv_menu);
-        menu_search=findViewById(R.id.menu_search);
-        toolbar=findViewById(R.id.toolbar);
-        tvLocation=findViewById(R.id.tv_location);
+        token = getIntent().getExtras().getString("access_token");
+        ivMenu = findViewById(R.id.iv_menu);
+        menu_search = findViewById(R.id.menu_search);
+        toolbar = findViewById(R.id.toolbar);
+        tvLocation = findViewById(R.id.tv_location);
 
         //액션바 변경하기(들어갈 수 있는 타입 : Toolbar type
         setSupportActionBar(toolbar);
@@ -156,17 +161,4 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
-    // 툴바 액티비티 연동
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        switch (item.getItemId()) {
-//            case R.id.menu:
-//                Intent NewActivity = new Intent(getApplicationContext(), bluetoothDeviceLists.class);
-//                startActivity(NewActivity);
-//                break;
-//        }
-//
-//        return true;
-//    }
 }

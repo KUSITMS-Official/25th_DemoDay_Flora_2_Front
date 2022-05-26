@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".OrderList">
+    tools:context=".ReservationActivity"
+    android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -47,29 +47,76 @@
                     android:layout_marginEnd="-1dp"
                     android:layout_marginBottom="10dp"
                     android:gravity="center"
-                    android:text="주문내역"
+                    android:text="에약하기"
                     android:textColor="@android:color/black"
                     android:textSize="19dp"
                     android:fontFamily="@font/spoqahansansneo_medium"/>
             </LinearLayout>
-
-            
         </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
 
-    <LinearLayout
+    <LinearLayout android:id="@+id/calendar"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="39dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:orientation="vertical">
+
+
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        android:id="@+id/calendarview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginTop="15dp">
+        android:theme="@style/CalenderViewCustom">
+    </com.prolificinteractive.materialcalendarview.MaterialCalendarView>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="412dp"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/grayline"
+        android:adjustViewBounds="true"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="픽업 시간"
+            android:textSize="19dp"
+            android:fontFamily="@font/spoqahansansneo_bold"
+            android:textColor="@color/black"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="15dp"/>
+    </LinearLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        app:srcCompat="@drawable/grayline_thin"
+        android:adjustViewBounds="true"
+        android:layout_marginBottom="15dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="30dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="vertical"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"/>
+            android:layout_height="match_parent" />
     </LinearLayout>
-
+    <ImageView
+        android:id="@+id/next_btn"
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/next_btn"
+        android:adjustViewBounds="true"/>
 </LinearLayout>

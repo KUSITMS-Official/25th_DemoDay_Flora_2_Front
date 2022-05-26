@@ -17,14 +17,19 @@
         <activity android:name=".AfterSearchPage" />
         <activity android:name=".SearchPage" />
         <activity android:name=".OrderList" />
+        <activity android:name=".AfterReservationActivity" />
         <activity
-            android:name=".LocationSetting"
+            android:name=".ReservationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".FeedSeeProduct"
             android:exported="true" />
         <activity
             android:name=".SearchMapActivity"
             android:exported="true" />
+        <activity android:name=".RegisterActivity" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".LocationSetting"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
@@ -37,6 +42,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="8fz6aeboa3" />
