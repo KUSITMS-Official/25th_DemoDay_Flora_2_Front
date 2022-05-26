@@ -54,6 +54,18 @@ dependencies {
     implementation "androidx.core:core-ktx:+"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
+    // Retrofit2
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    // Json Parser
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    // 네이버 지도 SDK
+    implementation 'com.naver.maps:map-sdk:3.14.0'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.github.Jay-Goo:RangeSeekBar:v3.0.0'
+    // Glide (이미지)
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
     implementation 'de.hdodenhof:circleimageview:3.1.0' //Circle ImageView
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
@@ -64,7 +76,7 @@ dependencies {
     //Firebase
     implementation 'com.google.firebase:firebase-messaging:23.0.5'
     implementation 'com.google.firebase:firebase-firestore:24.1.2'
-    
+
     //calender view
     //implementation 'com.github.prolificinteractive:material-calendarview:2.0.1'
     implementation 'com.prolificinteractive:material-calendarview:1.4.3'

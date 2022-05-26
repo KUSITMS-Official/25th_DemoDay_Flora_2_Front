@@ -12,11 +12,18 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static android.content.ContentValues.TAG;
+
+import com.example.flora.response.UserResponse;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class SearchPage extends AppCompatActivity {
 
@@ -26,15 +33,41 @@ public class SearchPage extends AppCompatActivity {
     private SearchAdapter adapter;      // 리스트뷰에 연결할 아답터
     private ArrayList<String> arraylist;
     private ImageView arrowButton;
+    public TextView tvLocation;
+    String token;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_page);
 
-        editSearch = (EditText) findViewById(R.id.editSearch);
+        token=getIntent().getExtras().getString("access_token");
+        editSearch = (EditText) findViewById(R.id.editFindSearch);
         listView = (ListView) findViewById(R.id.listView);
         arrowButton = (ImageView) findViewById(R.id.arrowButton);
+        tvLocation=findViewById(R.id.tv_location);
+
+        Call<UserResponse> user = RetrofitClient.getAPIService().getUserInfo(token);
+        user.enqueue(new Callback<UserResponse>() {
+            @Override
+            public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
+                if(response.isSuccessful()) {
+                    Log.d("연결이 성공적 : ", response.body().toString());
+                    String address = response.body().getUserAddress();
+                    if(!address.equals(null)) {
+                        String[] splitAddress = address.split(" ");
+                        tvLocation.setText(new StringBuilder().append(splitAddress[1] +" "+ splitAddress[2]));
+                    }
+                } else {
+                    Log.e("연결이 비정상적 : ", "error code : " + response.code());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UserResponse> call, Throwable t) {
+                Log.e("연결실패", t.getMessage());
+            }
+        });
 
         arrowButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,6 +116,7 @@ public class SearchPage extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Intent intent = new Intent(SearchPage.this, AfterSearchPage.class);
+                    intent.putExtra("access_token", token);
                     startActivity(intent);
                 }
             });
@@ -118,10 +152,8 @@ public class SearchPage extends AppCompatActivity {
 
     // 검색에 사용될 데이터를 리스트에 추가한다.
     private void settingList(){
-        list.add("최");
-        list.add("근");
-        list.add("검");
-        list.add("색");
-        list.add("어");
+        list.add("장미 꽃다발");
+        list.add("프리지아 꽃다발");
+        list.add("동작 꽃집");
     }
 }

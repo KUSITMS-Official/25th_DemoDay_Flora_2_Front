@@ -5,15 +5,24 @@ public class SearchItem {
     int resourceProfileId;
     String title;
     String context;
-    String discount;
     String price;
+    String discount;
 
-    public SearchItem(int resourceFlowerId, int resourceProfileId, String title, String context, String discount, String price) {
+    public SearchItem(int resourceFlowerId, int resourceProfileId, String title, String context, String price, String discount) {
         this.resourceFlowerId = resourceFlowerId;
         this.resourceProfileId = resourceProfileId;
         this.title = title;
         this.context = context;
+        this.price= price;
         this.discount = discount;
+
+    }
+
+    public SearchItem(int resourceFlowerId, int resourceProfileId, String title, String context, String price) {
+        this.resourceFlowerId = resourceFlowerId;
+        this.resourceProfileId = resourceProfileId;
+        this.title = title;
+        this.context = context;
         this.price= price;
 
     }
@@ -34,14 +43,13 @@ public class SearchItem {
         return context;
     }
 
-    public String getDiscount() {
-        return discount;
-    }
-
     public String getPrice() {
         return price;
     }
 
+    public String getDiscount() {
+        return discount;
+    }
 
     public void setResourceFlowerId(int resourceFlowerId) {
         this.resourceFlowerId = resourceFlowerId;
@@ -60,12 +68,12 @@ public class SearchItem {
         this.context = context;
     }
 
-    public void setDiscount(String discount) {
-        this.discount = discount;
-    }
-
     public void setPrice(String price) {
         this.price = price;
+    }
+
+    public void setDiscount(String discount) {
+        this.discount = discount;
     }
 
 }

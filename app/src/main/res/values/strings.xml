@@ -1,7 +1,23 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Flora</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name = "distance">
+        <item>0km</item>
+        <item>1km</item>
+        <item>2km</item>
+        <item>3km</item>
+        <item>4km</item>
+        <item>5km</item>
+    </string-array>
+    <string-array name = "price">
+        <item>0원</item>
+        <item>2만원</item>
+        <item>4만원</item>
+        <item>6만원</item>
+        <item>8만원</item>
+        <item>10만원</item>
+    </string-array>
     <string name="type_a_message">type a message</string>
 
     <string-array name="custom_weekdays">

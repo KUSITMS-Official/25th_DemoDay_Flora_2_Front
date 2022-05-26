@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- shadow (밑으로) : 그림자 -->
+    <item android:state_checked="false">
+        <layer-list>
+            <item android:drawable="@drawable/circle_shadow"></item>
+            <item>
+                <shape android:shape="oval"></shape>
+            </item>
+        </layer-list>
+    </item>
+    <item android:state_checked="true">
+        <layer-list>
+
+            <item android:drawable="@drawable/circle_shadow"></item>
+            <!-- 배경 -->
+            <item>
+                <shape android:shape="oval"></shape>
+            </item>
+            <!-- 체크 이미지-->
+            <item android:width="24dp" android:height="24dp" android:drawable="@drawable/ic_check" android:gravity="center"></item>
+
+        </layer-list>
+    </item>
+</selector>

@@ -12,17 +12,24 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
+import android.content.Context;
+
+import com.bumptech.glide.Glide;
+
 
 public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapter.ViewHolder> {
 
-    private ArrayList<HomeItem> mHomeList;
+    private Context context;
+    private ArrayList<HomeItem> mHomeList = new ArrayList<HomeItem>();
 
     @NonNull
     @NotNull
     @Override
     public HomeRecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_recycler_item, parent, false);
+
         return new ViewHolder(view);
+
     }
 
     @Override
@@ -30,7 +37,8 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
         holder.onBind(mHomeList.get(position));
     }
 
-    public void setHomeList(ArrayList<HomeItem> list){
+    public void setHomeList(Context context, ArrayList<HomeItem> list){
+        this.context = context;
         this.mHomeList = list;
         notifyDataSetChanged();
     }
@@ -41,20 +49,25 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView temp_item1;
-        TextView temp_item_tv1;
+        ImageView profileImage;
+        TextView titleTv;
+        TextView contextTv;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            temp_item1 = (ImageView) itemView.findViewById(R.id.temp_item1);
-            temp_item_tv1 = (TextView) itemView.findViewById(R.id.temp_item_tv1);
+            profileImage = (ImageView) itemView.findViewById(R.id.profileImage);
+            titleTv = (TextView) itemView.findViewById(R.id.titleTv);
+            contextTv = (TextView) itemView.findViewById(R.id.contextTv);
         }
 
         void onBind(HomeItem item){
-            temp_item1.setImageResource(item.getResourceFlowerId());
-            temp_item_tv1.setText(item.getTitle());
+            Glide.with(context).load(item.getProfileImage()).into(profileImage);
+            titleTv.setText(item.getTitle());
+            contextTv.setText(item.getContext());
         }
     }
 
 }
+
+

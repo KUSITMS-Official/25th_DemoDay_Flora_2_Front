@@ -8,10 +8,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.example.flora.databinding.*;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -38,6 +41,7 @@ public class ReservationActivity extends AppCompatActivity {
     private MaterialCalendarView calendarView;
     public ReservationRecyclerAdapter mRecyclerAdapter;
     public ArrayList<ReservationItem> mReservationItems;
+    private ImageView next_btn;
 
 
 
@@ -49,6 +53,17 @@ public class ReservationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_reservation);
 
         RecyclerView mRecyclerView = findViewById(R.id.recycler);
+
+        next_btn = (ImageView) findViewById(R.id.next_btn);
+
+        next_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ReservationActivity.this, AfterReservationActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         calendarView = findViewById(R.id.calendarview);
 

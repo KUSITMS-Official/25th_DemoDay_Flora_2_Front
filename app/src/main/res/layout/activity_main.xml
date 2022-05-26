@@ -13,7 +13,11 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:outlineSpotShadowColor="#757575"
+        >
 
         <include layout="@layout/toolbar" />
     </LinearLayout>
@@ -22,6 +26,7 @@
         android:id="@+id/container"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,6 +39,7 @@
             android:layout_gravity="bottom"
             app:backgroundTint="#FFFFFF"
             app:itemIconTint="@drawable/menu_selector_color"
+            app:itemTextColor="@drawable/menu_selector_color"
             app:labelVisibilityMode="labeled"
             app:menu="@menu/bottom_navigation_view" />
     </FrameLayout>
