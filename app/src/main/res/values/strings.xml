@@ -18,6 +18,7 @@
         <item>8만원</item>
         <item>10만원</item>
     </string-array>
+    <string name="type_a_message">type a message</string>
 
     <string-array name="custom_weekdays">
         <item>일</item>
