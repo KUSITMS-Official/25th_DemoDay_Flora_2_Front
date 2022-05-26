@@ -6,8 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    android:background="@color/secondary_text">
-    <!--tools:context=".ChatFragment"-->
+    android:background="@color/secondary_text"
+    tools:context=".ChatFragment">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/arrowButton"
@@ -16,7 +16,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="12dp"
-        app:srcCompat="@drawable/arrow_button"
+        app:srcCompat="@drawable/ic_left_arrow"
         android:layout_gravity="center"
         android:padding="6dp"
         app:layout_constraintStart_toStartOf="parent"

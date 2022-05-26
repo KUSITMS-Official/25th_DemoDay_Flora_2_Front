@@ -31,7 +31,7 @@ import java.util.List;
  */
 
 
-public class ChatFragment {
+public class ChatFragment extends Fragment {
 
     //binding
     private ActivityReservationBinding binding;
