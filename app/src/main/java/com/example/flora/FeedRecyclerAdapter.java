@@ -23,7 +23,7 @@ import java.util.ArrayList;
 public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapter.ViewHolder> {
 
     private Context context;
-    private ArrayList<FeedItem> mFeedList;
+    private ArrayList<FeedItem> mFeedList = new ArrayList<FeedItem>();
     private Intent intent;
 
     @NonNull
@@ -67,8 +67,8 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
         }
 
         void onBind(FeedItem item){
-            Glide.with(context).load(item.getFlowerShopImage()).into(flowerImage);
-            Glide.with(context).load(item.getPortfolioImage()).into(profileImage);
+            Glide.with(context).load(item.getPortfolioImage()).into(flowerImage);
+            Glide.with(context).load(item.getFlowerShopImage()).into(profileImage);
             titleTv.setText(item.getTitle());
             contextTv.setText(item.getContext());
             priceTv.setText(item.getPrice());

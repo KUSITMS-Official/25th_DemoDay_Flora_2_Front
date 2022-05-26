@@ -34,7 +34,7 @@ import java.util.ArrayList;
 public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapter.ViewHolder> {
 
     private Context context;
-    private ArrayList<FeedItem> mFeedList;
+    private ArrayList<HomeItem> mHomeList = new ArrayList<HomeItem>();
 
     @NonNull
     @NotNull
@@ -48,18 +48,18 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
 
     @Override
     public void onBindViewHolder(@NonNull @NotNull HomeRecyclerAdapter.ViewHolder holder, int position) {
-        holder.onBind(mFeedList.get(position));
+        holder.onBind(mHomeList.get(position));
     }
 
-    public void setHotList(Context context, ArrayList<FeedItem> list){
+    public void setHomeList(Context context, ArrayList<HomeItem> list){
         this.context = context;
-        this.mFeedList = list;
+        this.mHomeList = list;
         notifyDataSetChanged();
     }
 
     @Override
     public int getItemCount() {
-        return mFeedList.size();
+        return mHomeList.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
@@ -81,9 +81,9 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
             discountTv = (TextView) itemView.findViewById(R.id.discountTv);
         }
 
-        void onBind(FeedItem item){
-            Glide.with(context).load(item.getFlowerShopImage()).into(flowerImage);
-            Glide.with(context).load(item.getPortfolioImage()).into(profileImage);
+        void onBind(HomeItem item){
+            Glide.with(context).load(item.getPortfolioImage()).into(flowerImage);
+            Glide.with(context).load(item.getFlowerShopImage()).into(profileImage);
             titleTv.setText(item.getTitle());
             contextTv.setText(item.getContext());
             priceTv.setText(item.getPrice());
