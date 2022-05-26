@@ -175,7 +175,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
 
 
         mRecyclerView1.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mRecyclerView1.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL,false));
+        mRecyclerView1.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.VERTICAL,false));
 
         mRecyclerView2.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView2.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL,false));
@@ -194,6 +194,31 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
         mRecyclerView3.setAdapter(mRecyclerAdapter3);
 
         /* adapt data */
+        Call<FlowerShopListResponse> flowerShopListCall = RetrofitClient.getAPIService().getHotFlowerShop(token);
+
+        flowerShopListCall.enqueue(new Callback<FlowerShopListResponse>() {
+            @Override
+            public void onResponse(Call<FlowerShopListResponse> call, Response<FlowerShopListResponse> response) {
+                FlowerShopListResponse resource = response.body();
+                List<FlowerShopResponse> dataList = resource.getData();
+                mHomeItems1 = new ArrayList<>();
+                if (dataList != null && dataList.size() != 0) {
+                    for (FlowerShopResponse data : dataList) {
+                        String [] address = data.getFlowerShopAddress().split(" ");
+                        mHomeItems1.add(new HomeItem(data.getFlowerShopImage(),
+                                    data.getFlowerShopName(), address[1] + " " + address[2]));
+
+                    }
+                    mRecyclerAdapter.setHomeList(getContext(), mHomeItems1);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<FlowerShopListResponse> call, Throwable t) {
+                Log.e("연결실패", t.getMessage());
+            }
+        });
+
         Call<PortfolioListResponse> portfolioListCall = RetrofitClient.getAPIService().getHotPortfolio(token);
 
         portfolioListCall.enqueue(new Callback<PortfolioListResponse>() {
@@ -201,22 +226,22 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
             public void onResponse(Call<PortfolioListResponse> call, Response<PortfolioListResponse> response) {
                 PortfolioListResponse resource = response.body();
                 List<PortfolioResponse> dataList = resource.getData();
-                mHomeItems1 = new ArrayList<>();
+                mHomeItems2 = new ArrayList<>();
                 if (dataList != null && dataList.size() != 0) {
                     for (PortfolioResponse data : dataList) {
                         int discount = data.getDiscount();
                         int price = data.getPrice();
                         String priceFormat = String.format("%,d원", price);
                         if (discount == 0) {
-                            mHomeItems1.add(new HomeItem(data.getFlowerShopResponse().getFlowerShopImage(), data.getPortfolioImage(),
+                            mHomeItems2.add(new HomeItem2(data.getFlowerShopResponse().getFlowerShopImage(), data.getPortfolioImage(),
                                     data.getFlowerShopResponse().getFlowerShopName(), data.getPortfolioName(), priceFormat, ""));
                         } else {
-                            mHomeItems1.add(new HomeItem(data.getFlowerShopResponse().getFlowerShopImage(), data.getPortfolioImage(),
+                            mHomeItems2.add(new HomeItem2(data.getFlowerShopResponse().getFlowerShopImage(), data.getPortfolioImage(),
                                     data.getFlowerShopResponse().getFlowerShopName(), data.getPortfolioName(), priceFormat, discount + "%"));
                         }
 
                     }
-                    mRecyclerAdapter.setHomeList(getContext(), mHomeItems1);
+                    mRecyclerAdapter2.setHomeList2(getContext(), mHomeItems2);
                 }
             }
 
@@ -225,15 +250,6 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
                 Log.e("연결실패", t.getMessage());
             }
         });
-
-        mHomeItems2 = new ArrayList<>();
-        mHomeItems2.add(new HomeItem2(R.drawable.temp_rec_img));
-        mHomeItems2.add(new HomeItem2(R.drawable.temp_rec_img));
-        mHomeItems2.add(new HomeItem2(R.drawable.temp_rec_img));
-        mHomeItems2.add(new HomeItem2(R.drawable.temp_rec_img));
-        mHomeItems2.add(new HomeItem2(R.drawable.temp_rec_img));
-        mHomeItems2.add(new HomeItem2(R.drawable.temp_rec_img));
-        mRecyclerAdapter2.setHomeList2(mHomeItems2);
 
         Call<PortfolioListResponse> portfolioListCall3 = RetrofitClient.getAPIService().getSalePortfolio(token);
 

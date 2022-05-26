@@ -13,22 +13,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 
 import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-
-import org.jetbrains.annotations.NotNull;
-
-import java.util.ArrayList;
 
 
 public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapter.ViewHolder> {
@@ -63,33 +49,25 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView flowerImage;
         ImageView profileImage;
         TextView titleTv;
         TextView contextTv;
-        TextView priceTv;
-        TextView discountTv;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            flowerImage = (ImageView) itemView.findViewById(R.id.flowerImage);
             profileImage = (ImageView) itemView.findViewById(R.id.profileImage);
             titleTv = (TextView) itemView.findViewById(R.id.titleTv);
             contextTv = (TextView) itemView.findViewById(R.id.contextTv);
-            priceTv = (TextView) itemView.findViewById(R.id.priceTv);
-            discountTv = (TextView) itemView.findViewById(R.id.discountTv);
         }
 
         void onBind(HomeItem item){
-            Glide.with(context).load(item.getPortfolioImage()).into(flowerImage);
-            Glide.with(context).load(item.getFlowerShopImage()).into(profileImage);
+            Glide.with(context).load(item.getProfileImage()).into(profileImage);
             titleTv.setText(item.getTitle());
             contextTv.setText(item.getContext());
-            priceTv.setText(item.getPrice());
-            discountTv.setText(item.getDiscount());
         }
     }
 
 }
+
 
