@@ -48,12 +48,9 @@ public class OrderList extends AppCompatActivity {
 
         /* adapt data */
         mOrderListItem = new ArrayList<>();
-        mOrderListItem.add(new OrderListItem("2021.1.29(목)", R.drawable.order_flower_temp, "꽃좀사라", "장미 꽃다발", "35,000"));
-        mOrderListItem.add(new OrderListItem("2021.1.29(목)", R.drawable.order_flower_temp, "꽃좀사라", "장미 꽃다발", "35,000"));
-        mOrderListItem.add(new OrderListItem("2021.1.29(목)", R.drawable.order_flower_temp, "꽃좀사라", "장미 꽃다발", "35,000"));
-        mOrderListItem.add(new OrderListItem("2021.1.29(목)", R.drawable.order_flower_temp, "꽃좀사라", "장미 꽃다발", "35,000"));
-        mOrderListItem.add(new OrderListItem("2021.1.29(목)", R.drawable.order_flower_temp, "꽃좀사라", "장미 꽃다발", "35,000"));
-        mOrderListItem.add(new OrderListItem("2021.1.29(목)", R.drawable.order_flower_temp, "꽃좀사라", "장미 꽃다발", "35,000"));
+        mOrderListItem.add(new OrderListItem("2021.5.25(목)", R.drawable.order_flower_temp1, "파르테", "파르테 꽃바구니", "35,000"));
+        mOrderListItem.add(new OrderListItem("2022.1.12(월)", R.drawable.order_flower_temp2, "하루앤아키플라워", "아키 꽃다발", "25,000"));
+        mOrderListItem.add(new OrderListItem("2021.12.25(목)", R.drawable.order_flower_temp3, "라임", "라임 꽃다발", "15,000"));
         mRecyclerAdapter.setOrderList(mOrderListItem);
     }
 

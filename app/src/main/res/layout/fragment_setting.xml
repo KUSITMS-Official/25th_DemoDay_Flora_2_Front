@@ -15,11 +15,12 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="15dp">
                 <ImageView
                     android:id="@+id/SettingProfile"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     app:srcCompat="@drawable/setting_profile"
@@ -52,22 +53,22 @@
                 android:adjustViewBounds="true"/>
             <ImageView
                 android:id="@+id/orderlistButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="30dp"
                 android:layout_gravity="left"
                 app:srcCompat="@drawable/orderlist_img"/>
             <ImageView
                 android:id="@+id/reviewButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="30dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
+                android:layout_marginLeft="-8dp"
                 app:srcCompat="@drawable/reviewbutton"/>
             <ImageView
                 android:id="@+id/askButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
                 android:layout_margin="30dp"
                 android:layout_gravity="right"
                 app:srcCompat="@drawable/ask_img"/>
@@ -86,21 +87,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="280dp">
+        android:layout_marginTop="270dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <ImageView
-                android:id="@+id/UserCenterButton"
+            <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
-                android:src="@drawable/usercenter_button"
-                android:adjustViewBounds="true"
-                />
+                android:layout_height="wrap_content"
+                android:text="고객센터"
+                android:textSize="18dp"
+                android:fontFamily="@font/spoqahansansneo_medium"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="15dp"/>
             <ImageView
                 android:layout_width="700dp"
                 android:layout_height="wrap_content"
@@ -113,16 +115,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <ImageView
-                android:id="@+id/SetButton"
+            <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/set_button"
-                android:adjustViewBounds="true"
-                />
+                android:layout_height="wrap_content"
+                android:text="환경설정"
+                android:textSize="18dp"
+                android:fontFamily="@font/spoqahansansneo_medium"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="15dp"/>
             <ImageView
                 android:layout_width="700dp"
                 android:layout_height="wrap_content"
@@ -135,16 +137,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <ImageView
-                android:id="@+id/QnaButton"
+            <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/qna_button"
-                android:adjustViewBounds="true"
-                />
+                android:layout_height="wrap_content"
+                android:text="QnA"
+                android:textSize="18dp"
+                android:fontFamily="@font/spoqahansansneo_medium"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="15dp"/>
             <ImageView
                 android:layout_width="700dp"
                 android:layout_height="wrap_content"
@@ -157,16 +159,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <ImageView
-                android:id="@+id/NoticeButton"
+            <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/notice_button"
-                android:adjustViewBounds="true"
-                />
+                android:layout_height="wrap_content"
+                android:text="공지사항"
+                android:textSize="18dp"
+                android:fontFamily="@font/spoqahansansneo_medium"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="15dp"/>
             <ImageView
                 android:layout_width="700dp"
                 android:layout_height="wrap_content"

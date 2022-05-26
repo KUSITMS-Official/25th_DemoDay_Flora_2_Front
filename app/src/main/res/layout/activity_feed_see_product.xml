@@ -79,7 +79,7 @@
                     android:id="@+id/titleTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="연분홍색 카네이션 꽃바구니"
+                    android:text="카탈리나 장미 꽃다발"
                     android:textSize="20dp"
                     android:fontFamily="@font/spoqahansansneo_regular"
                     android:textStyle="bold"
@@ -132,7 +132,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="꽃집정보"
+                    android:text="상품 정보"
                     android:textSize="19dp"
                     android:fontFamily="@font/spoqahansansneo_bold"
                     android:textColor="@color/black"
@@ -155,10 +155,12 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="가정의달 5월, 행사 참 많죠?\n\n그중에서도 카네이션이 필수인 어버이날과 스승의날!\n\n모두쁘다에서 준비한 연분홍색 카네이션 꽃바구니를 선물해보세요🌹\n\n📌구성\n\n한송이 다발, 두송이 다발, 세송이다발\n\n📌사이즈\n\n카네이션 지름 : 약 7cm\n\n한송이용 선물상자:가로 11.5cm, 세로 23.5cm, 높이 6cm\n\n💡 기타 문의사항은 메세지 주세요 💡"
-                        android:textSize="14dp"
+                        android:text="연인한테 줄 꽃다발을 고민 중이신가요?\n\n노란색이 참 이쁜 카탈리나 꽃!\n\n소피의 정원에서 준비한 장미와 함께 카탈리나 장미 꽃다발을 선물해 보세요💐\n\n📌구성 한 송이 다발, 두 송이 다발, 세 송이 다발 \n\n📌사이즈 카탈라나 지름 : 약 7cm\n\n한 송이용 선물상자: 가로 11.5cm, 세로 23.5cm, 높이 6cm\n\n💡 기타 문의사항은 메세지 주세요 💡"
+                        android:textSize="17dp"
+                        android:gravity="center"
                         android:fontFamily="@font/spoqahansansneo_regular"
-                        android:textColor="@color/black"/>
+                        android:textColor="@color/black"
+                        android:padding="20dp"/>
                 <View
                     android:layout_width="0dp"
                     android:layout_height="0dp"
@@ -173,12 +175,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/review_img"
-                android:adjustViewBounds="true"/>
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="10dp"
-                app:srcCompat="@drawable/grayline_thin"
-                android:adjustViewBounds="true"/>
+                android:adjustViewBounds="true"
+                android:padding="10dp"/>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -199,13 +197,9 @@
                 <ImageView
                     android:layout_width="280dp"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/reservation_button"
+                    app:srcCompat="@drawable/reservation_button2"
                     android:adjustViewBounds="true"
                     android:id="@+id/reservation_button"/>
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

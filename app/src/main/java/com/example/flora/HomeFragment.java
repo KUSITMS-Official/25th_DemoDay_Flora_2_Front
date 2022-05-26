@@ -423,9 +423,8 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
                 @Override
                 public boolean onClick(@NonNull Overlay overlay)
                 {
-                    // 가게 이동
-                    Toast.makeText(getContext(), "가게 이동", Toast.LENGTH_LONG);
-                    System.out.println("가게이동");
+                    Intent intent = new Intent(getActivity(), SeeStore.class);
+                    startActivity(intent);
                     return false;
                 }
             });

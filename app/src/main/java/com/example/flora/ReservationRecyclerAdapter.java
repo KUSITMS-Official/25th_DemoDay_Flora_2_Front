@@ -1,8 +1,10 @@
 package com.example.flora;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,7 +17,7 @@ import java.util.ArrayList;
 
 public class ReservationRecyclerAdapter extends RecyclerView.Adapter<ReservationRecyclerAdapter.ViewHolder> {
 
-    private ArrayList<ReservationItem> mReservationList;
+    private ArrayList<ReservationItem> mReservationList = new ArrayList<ReservationItem>();;
 
     @NonNull
     @NotNull
@@ -28,6 +30,15 @@ public class ReservationRecyclerAdapter extends RecyclerView.Adapter<Reservation
     @Override
     public void onBindViewHolder(@NonNull @NotNull ReservationRecyclerAdapter.ViewHolder holder, int position) {
         holder.onBind(mReservationList.get(position));
+
+        holder.temp_item1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                v.setBackgroundResource(R.drawable.time_img_col);
+            }
+        });
+
     }
 
     public void setReservationListList(ArrayList<ReservationItem> list){

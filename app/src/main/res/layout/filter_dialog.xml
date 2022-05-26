@@ -6,7 +6,8 @@
     android:layout_gravity="bottom"
     android:background="@drawable/filter_dialog_box"
     android:orientation="vertical"
-    android:paddingVertical="18dp" >
+    android:paddingVertical="18dp"
+    android:layout_marginTop="287dp">
 
     <LinearLayout
         android:layout_width="match_parent"
