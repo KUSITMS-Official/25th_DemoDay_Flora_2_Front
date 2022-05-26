@@ -2,13 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.flora">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
     <!-- 인터넷 사용 권한 -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -18,10 +17,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Flora"
         android:usesCleartextTraffic="true">
-        <activity android:name=".AfterSearchPage" />
-        <activity android:name=".SearchPage" />
-        <activity android:name=".OrderList" />
-        <activity android:name=".AfterReservationActivity" />
+        <activity
+            android:name=".AfterSearchPage"
+            android:exported="true" />
+        <activity
+            android:name=".SearchPage"
+            android:exported="true" />
+        <activity
+            android:name=".OrderList"
+            android:exported="true" />
+        <activity
+            android:name=".AfterReservationActivity"
+            android:exported="true" />
         <activity
             android:name=".ReservationActivity"
             android:exported="true" />
@@ -31,34 +38,22 @@
         <activity
             android:name=".SearchMapActivity"
             android:exported="true" />
-        <activity android:name=".RegisterActivity" />
-        android:theme="@style/Theme.Flora">
-        <activity android:name=".ReservationActivity"
-            android:exported="false">
-        </activity>
-        <activity android:name=".FeedSeeProduct"
-            android:exported="false"/>
-        <activity android:name=".AfterSearchPage"
-            android:exported="false"/>
-        <activity android:name=".SearchPage"
-            android:exported="false"/>
-        <activity android:name=".OrderList"
-            android:exported="false"/>
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="true" />
         <activity
             android:name=".LocationSetting"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-        </activity>
+            android:exported="true" />
 
         <activity
             android:name=".activities.ShopsActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -67,21 +62,16 @@
 
         <activity
             android:name=".activities.ChatActivity"
+            android:exported="true"
             android:windowSoftInputMode="adjustResize" />
-
-        <activity
-            android:name=".LoginActivity"
-            android:exported="false">
-        </activity>
 
         <service
             android:name=".firebase.MessagingService"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
 
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"

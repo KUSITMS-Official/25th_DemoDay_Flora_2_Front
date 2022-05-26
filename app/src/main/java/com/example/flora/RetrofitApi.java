@@ -74,4 +74,29 @@ public interface RetrofitApi {
     // 할인 꽃 상품
     @GET("/api/v1/portfolio/sale")
     Call<PortfolioListResponse> getSalePortfolio(@Header("Authorization") String Authorization);
+
+    // 사용자 꽃 상품 찜 목록 조회
+    @GET("/api/v1/clip/item")
+    Call<PortfolioListResponse> getClipPortfolio(@Header("Authorization") String Authorization);
+
+    // 사용자 꽃집 찜 목록 조회
+    @GET("/api/v1/clip/shop")
+    Call<FlowerShopListResponse> getClipFlowerShop(@Header("Authorization") String Authorization);
+
+    // 사용자 꽃 상품 찜 추가
+    @GET("/api/v1/clip/item/{portfolioId}")
+    Call<Void> clipPortfolio(@Header("Authorization") String Authorization, @Path("portfolioId") String portfolioId);
+
+    // 사용자 꽃집 찜 목록 추가
+    @GET("/api/v1/clip/shop/{flowerShopId}")
+    Call<Void> clipFlowerShop(@Header("Authorization") String Authorization, @Path("flowerShopId") String flowerShopId);
+
+    // 사용자 꽃 상품 찜 삭제
+    @GET("/api/v1/clip/item/unclip/{portfolioId}")
+    Call<Void> unClipPortfolio(@Header("Authorization") String Authorization, @Path("portfolioId") String portfolioId);
+
+    // 사용자 꽃집 찜 목록 삭제
+    @GET("/api/v1/clip/shop/unclip/{flowerShopId}")
+    Call<Void> unClipFlowerShop(@Header("Authorization") String Authorization, @Path("flowerShopId") String flowerShopId);
+
 }
