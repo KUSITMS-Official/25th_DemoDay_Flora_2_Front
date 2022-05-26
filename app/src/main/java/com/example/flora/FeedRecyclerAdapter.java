@@ -1,6 +1,7 @@
 package com.example.flora;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,7 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
 
     private Context context;
     private ArrayList<FeedItem> mFeedList;
+    private Intent intent;
 
     @NonNull
     @NotNull
@@ -37,6 +39,14 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
     @Override
     public void onBindViewHolder(@NonNull @NotNull FeedRecyclerAdapter.ViewHolder holder, int position) {
         holder.onBind(mFeedList.get(position));
+
+        holder.flowerImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(v.getContext(), FeedSeeProduct.class);
+                v.getContext().startActivity(intent);
+            }
+        });
     }
 
     public void setFeedList(Context context, ArrayList<FeedItem> list){
