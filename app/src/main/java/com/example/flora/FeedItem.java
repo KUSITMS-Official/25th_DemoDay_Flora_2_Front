@@ -8,24 +8,46 @@ public class FeedItem {
     String price;
     String discount;
     Boolean clip;
+    Long portfolioId;
 
-    public FeedItem(String flowerShopImage, String portfolioImage, String title, String context, String price, String discount) {
+    public FeedItem(String flowerShopImage, String portfolioImage, String title, String context, String price, String discount, Long portfolioId) {
         this.flowerShopImage = flowerShopImage;
         this.portfolioImage = portfolioImage;
         this.title = title;
         this.context = context;
         this.price= price;
         this.discount = discount;
-
+        this.portfolioId = portfolioId;
     }
 
-    public FeedItem(String flowerShopImage, String portfolioImage, String title, String context, String price) {
+    public FeedItem(String flowerShopImage, String portfolioImage, String title, String context, String price, Long portfolioId) {
         this.flowerShopImage = flowerShopImage;
         this.portfolioImage = portfolioImage;
         this.title = title;
         this.context = context;
         this.price= price;
+        this.portfolioId = portfolioId;
+    }
 
+    public FeedItem(String flowerShopImage, String portfolioImage, String title, String context, String price, String discount, Long portfolioId, Boolean clip) {
+        this.flowerShopImage = flowerShopImage;
+        this.portfolioImage = portfolioImage;
+        this.title = title;
+        this.context = context;
+        this.price= price;
+        this.discount = discount;
+        this.portfolioId = portfolioId;
+        this.clip = clip;
+    }
+
+    public FeedItem(String flowerShopImage, String portfolioImage, String title, String context, String price, Long portfolioId, Boolean clip) {
+        this.flowerShopImage = flowerShopImage;
+        this.portfolioImage = portfolioImage;
+        this.title = title;
+        this.context = context;
+        this.price= price;
+        this.portfolioId = portfolioId;
+        this.clip = clip;
     }
 
     public String getFlowerShopImage() {
@@ -51,6 +73,8 @@ public class FeedItem {
     }
 
     public Boolean getClip() { return clip; }
+
+    public Long getPortfolioId() {return portfolioId;}
 
     public void setFlowerShopImage(String flowerShopImage) {
         this.flowerShopImage = flowerShopImage;
@@ -79,4 +103,7 @@ public class FeedItem {
 
     public void setClip(Boolean clip) {this.clip = clip; }
 
+    public void setPortfolioId(Long portfolioId) {
+        this.portfolioId = portfolioId;
+    }
 }

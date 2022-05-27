@@ -2,6 +2,9 @@ package com.example.flora;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,6 +36,7 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
     private Context context;
     private ArrayList<FeedItem> mFeedList = new ArrayList<FeedItem>();
     private Intent intent;
+    private String token;
 
     @NonNull
     @NotNull
@@ -44,7 +48,8 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
 
     }
 
-    public void setFeedList(Context context, ArrayList<FeedItem> list){
+    public void setFeedList(String token, Context context, ArrayList<FeedItem> list){
+        this.token = token;
         this.context = context;
         this.mFeedList = list;
         notifyDataSetChanged();
@@ -90,7 +95,8 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
 
     @Override
     public void onBindViewHolder(@NonNull @NotNull FeedRecyclerAdapter.ViewHolder holder, int position) {
-        holder.onBind(mFeedList.get(position));
+        FeedItem feedItem = mFeedList.get(position);
+        holder.onBind(feedItem);
 
         holder.flowerImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,37 +109,40 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
         holder.clipImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(holder.clipImage.getResources().getIdentifier(v.getContext(), "ic_heart", "drawable")) {
+                Drawable drawable = holder.clipImage.getDrawable();
+                Drawable fillHeart = context.getResources().getDrawable(R.drawable.ic_fill_heart);
+                Bitmap bitmap = ((BitmapDrawable)drawable).getBitmap();
+                Bitmap fillBitmap = ((BitmapDrawable)fillHeart).getBitmap();
+                if(bitmap.equals(fillBitmap)) {
                     holder.clipImage.setImageResource(R.drawable.ic_heart);
-                    Call<Boolean> unClip = RetrofitClient.getAPIService().unClipPortfolio(token);
+                    Call<Void> unClip = RetrofitClient.getAPIService().unClipPortfolio(token, feedItem.portfolioId.toString());
 
-                    unClip.enqueue(new Callback<Boolean>() {
+                    unClip.enqueue(new Callback<Void>() {
                         @Override
-                        public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                        public void onResponse(Call<Void> call, Response<Void> response) {
 
                             Log.d("연결성공", response.body().toString());
                         }
 
                         @Override
-                        public void onFailure(Call<Boolean> call, Throwable t) {
+                        public void onFailure(Call<Void> call, Throwable t) {
                             Log.e("연결실패", t.getMessage());
                         }
                     });
                 }
                 else {
                     holder.clipImage.setImageResource(R.drawable.ic_fill_heart);
-                    holder.clipImage.setImageResource(R.drawable.ic_heart);
-                    Call<Boolean> clip = RetrofitClient.getAPIService().clipPortfolio(token);
+                    Call<Void> clip = RetrofitClient.getAPIService().clipPortfolio(token, feedItem.portfolioId.toString());
 
-                    clip.enqueue(new Callback<Boolean>() {
+                    clip.enqueue(new Callback<Void>() {
                         @Override
-                        public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                        public void onResponse(Call<Void> call, Response<Void> response) {
 
                             Log.d("연결성공", response.body().toString());
                         }
 
                         @Override
-                        public void onFailure(Call<Boolean> call, Throwable t) {
+                        public void onFailure(Call<Void> call, Throwable t) {
                             Log.e("연결실패", t.getMessage());
                         }
                     });

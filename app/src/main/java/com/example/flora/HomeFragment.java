@@ -429,7 +429,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
                 }
             });
             marker.setIcon(OverlayImage.fromResource(R.drawable.ic_map_pin_yellow));
-            marker.setWidth(16); marker.setHeight(19);
+            marker.setWidth(50); marker.setHeight(60);
             activeMarkers.add(marker);
         }
     }

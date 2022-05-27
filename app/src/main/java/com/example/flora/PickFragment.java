@@ -7,12 +7,14 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RadioGroup;
 
 import com.example.flora.response.FlowerShopListResponse;
 import com.example.flora.response.FlowerShopResponse;
@@ -98,10 +100,10 @@ public class PickFragment extends Fragment {
         RecyclerView mRecyclerView1 = rootView.findViewById(R.id.recycler1);
         RecyclerView mRecyclerView2 = rootView.findViewById(R.id.recycler2);
 
-        GridLayoutManager gridLayoutManager1 = new GridLayoutManager(getActivity(), 2);
-        mRecyclerView1.setLayoutManager(gridLayoutManager1);
-        GridLayoutManager gridLayoutManager2 = new GridLayoutManager(getActivity(), 2);
-        mRecyclerView2.setLayoutManager(gridLayoutManager2);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 2);
+        mRecyclerView1.setLayoutManager(gridLayoutManager);
+        mRecyclerView2.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mRecyclerView2.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.VERTICAL,false));
 
         /* initiate adapter */
         mRecyclerAdapter = new PickRecyclerAdapter();
@@ -156,7 +158,7 @@ public class PickFragment extends Fragment {
                     for (FlowerShopResponse data : dataList) {
                         String [] address = data.getFlowerShopAddress().split(" ");
                         mPickItems2.add(new PickItem2(data.getFlowerShopImage(),
-                                data.getFlowerShopName(), address[1] + " " + address[2]));
+                                data.getFlowerShopName(), data.getClipCount()));
 
                     }
                     mRecyclerAdapter2.setPickList2(getContext(), mPickItems2);
@@ -166,6 +168,24 @@ public class PickFragment extends Fragment {
             @Override
             public void onFailure(Call<FlowerShopListResponse> call, Throwable t) {
                 Log.e("연결실패", t.getMessage());
+            }
+        });
+
+        RadioGroup radioGroup = rootView.findViewById(R.id.tab_radio_group);
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId){
+                    case R.id.clip_flowerShop:
+                        mRecyclerView2.setVisibility(View.VISIBLE);
+                        mRecyclerView1.setVisibility(View.GONE);
+                        break;
+                    case R.id.clip_portfolio:
+                        mRecyclerView1.setVisibility(View.VISIBLE);
+                        mRecyclerView2.setVisibility(View.GONE);
+                        break;
+                }
             }
         });
 

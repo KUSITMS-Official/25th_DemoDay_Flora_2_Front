@@ -33,6 +33,9 @@
             android:name=".ReservationActivity"
             android:exported="true" />
         <activity
+            android:name=".SeeStore"
+            android:exported="true" />
+        <activity
             android:name=".FeedSeeProduct"
             android:exported="true" />
         <activity

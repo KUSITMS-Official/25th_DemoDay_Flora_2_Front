@@ -3,13 +3,12 @@ package com.example.flora;
 public class PickItem2 {
     String profileImage;
     String title;
-    String context;
+    String count;
 
-    public PickItem2(String profileImage, String title, String context) {
+    public PickItem2(String profileImage, String title, String count) {
         this.profileImage = profileImage;
         this.title = title;
-        this.context = context;
-
+        this.count = count;
     }
 
 
@@ -19,8 +18,8 @@ public class PickItem2 {
         return title;
     }
 
-    public String getContext() {
-        return context;
+    public String getCount() {
+        return count;
     }
 
     public void setProfileImage(String profileImage) {
@@ -31,8 +30,8 @@ public class PickItem2 {
         this.title = title;
     }
 
-    public void setContext(String context) {
-        this.context = context;
+    public void setCount(String count) {
+        this.count = count;
     }
 
 }
