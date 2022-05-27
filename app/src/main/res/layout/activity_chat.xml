@@ -146,6 +146,7 @@
         android:paddingEnd="16dp"
         android:textColor="@color/white"
         android:textColorHint="@color/secondary_text"
+        android:fontFamily="@font/spoqahansansneo_bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/LayoutSend"
         app:layout_constraintStart_toStartOf="parent" />
