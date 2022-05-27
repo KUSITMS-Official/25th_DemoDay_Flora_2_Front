@@ -1,18 +1,17 @@
-package com.example.flora.activities;
+package com.example.flora;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.flora.R;
 import com.example.flora.adapters.ChatAdapter;
 import com.example.flora.databinding.ActivityChatBinding;
-import com.example.flora.databinding.ActivityReservationBinding;
 import com.example.flora.models.ChatMessage;
 import com.example.flora.models.Shop;
 import com.example.flora.utilities.Constants;
@@ -24,7 +23,6 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
@@ -56,6 +54,8 @@ public class ChatActivity extends AppCompatActivity {
     Button payButton;
     private int stuck = 10;
 
+    ImageView imageBack;
+
     @Override
     protected void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
@@ -77,6 +77,14 @@ public class ChatActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 payApi();
+            }
+        });
+
+        imageBack = (ImageView) findViewById(R.id.imageBack);
+        imageBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
 
@@ -151,7 +159,7 @@ public class ChatActivity extends AppCompatActivity {
 
     private void loadReceiverDetails() {
         receiverShop = (Shop) getIntent().getSerializableExtra(Constants.KEY_FLOEWRSHOP);
-        binding.textName.setText(receiverShop.name);
+        binding.textName.setText("소피의 정원");
     }
 
     private void setListeners() {
@@ -160,7 +168,7 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     private String getReadableDateTime(Date date) {
-        return new SimpleDateFormat("MMMM dd, yyyy -hh :mm a", Locale.getDefault()).format(date);
+        return new SimpleDateFormat("a hh:mm", Locale.getDefault()).format(date);
     }
 
     private void payApi() {
@@ -216,5 +224,7 @@ public class ChatActivity extends AppCompatActivity {
                         })
                 .request();
     }
+
+
 
 }

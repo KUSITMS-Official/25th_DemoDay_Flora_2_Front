@@ -52,9 +52,6 @@
             android:exported="true" />
 
         <activity
-            android:name=".activities.ShopsActivity"
-            android:exported="true" />
-        <activity
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
@@ -64,9 +61,16 @@
         </activity>
 
         <activity
-            android:name=".activities.ChatActivity"
+            android:name="com.example.flora.ChatActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name="com.example.flora.activities.ShopsActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
 
         <service
             android:name=".firebase.MessagingService"

@@ -1,33 +1,24 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="19dp"
+    android:width="21dp"
     android:height="20dp"
-    android:viewportWidth="19"
+    android:viewportWidth="21"
     android:viewportHeight="20">
   <group>
     <clip-path
-        android:pathData="M0.1667,0.6667h18.6667v18.6667h-18.6667z"/>
+        android:pathData="M0.8333,0.6667h19.3333v18.6667h-19.3333z"/>
     <path
-        android:pathData="M17.278,2.2222L8.7224,10.7778"
+        android:pathData="M18.5556,2.2222L9.6945,10.7778"
         android:strokeLineJoin="round"
         android:strokeWidth="2"
         android:fillColor="#00000000"
-        android:strokeColor="#D2D1D4"
+        android:strokeColor="#E8E8EA"
         android:strokeLineCap="round"/>
     <path
-        android:pathData="M17.6668,1.8334L11.9502,18.1667L8.6835,10.8167L1.3335,7.55L17.6668,1.8334Z"
+        android:pathData="M18.9584,1.8333L13.0375,18.1666L9.6542,10.8166L2.0417,7.55L18.9584,1.8333Z"
         android:strokeLineJoin="round"
         android:strokeWidth="2"
         android:fillColor="#00000000"
-        android:strokeColor="#D2D1D4"
+        android:strokeColor="#E8E8EA"
         android:strokeLineCap="round"/>
   </group>
-    android:width="24dp"
-    android:height="24dp"
-    android:viewportWidth="24"
-    android:viewportHeight="24"
-    android:tint="?attr/colorControlNormal"
-    android:autoMirrored="true">
-  <path
-      android:fillColor="@android:color/white"
-      android:pathData="M3.4,20.4l17.45,-7.48c0.81,-0.35 0.81,-1.49 0,-1.84L3.4,3.6c-0.66,-0.29 -1.39,0.2 -1.39,0.91L2,9.12c0,0.5 0.37,0.93 0.87,0.99L17,12 2.87,13.88c-0.5,0.07 -0.87,0.5 -0.87,1l0.01,4.61c0,0.71 0.73,1.2 1.39,0.91z"/>
 </vector>
