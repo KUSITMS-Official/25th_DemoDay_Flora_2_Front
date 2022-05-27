@@ -415,8 +415,8 @@ public class FeedFragment extends Fragment {
                                     mFeedItems.add(new FeedItem(data.getFlowerShopResponse().getFlowerShopImage(), data.getPortfolioImage(),
                                             data.getFlowerShopResponse().getFlowerShopName(), data.getPortfolioName(), priceFormat, "", data.getId(), clipCheck));
                                 else
-                                    mFeedItems.add(new FeedItem(data.getFlowerShopResponse().getFlowerShopImage(), data.getPortfolioImage(), data.getPortfolioName(),
-                                            data.getFlowerShopResponse().getFlowerShopName(), priceFormat, discount + "%", data.getId(), clipCheck));
+                                    mFeedItems.add(new FeedItem(data.getFlowerShopResponse().getFlowerShopImage(), data.getPortfolioImage(),
+                                            data.getFlowerShopResponse().getFlowerShopName(), data.getPortfolioName(), priceFormat, discount + "%", data.getId(), clipCheck));
                                 mRecyclerAdapter.setFeedList(token, getContext(), mFeedItems);
                                 mRecyclerAdapter.notifyDataSetChanged();
                             }

@@ -7,7 +7,7 @@ public class FeedItem {
     String context;
     String price;
     String discount;
-    Boolean clip = false;
+    Boolean clip;
     Long portfolioId;
 
     public FeedItem(String flowerShopImage, String portfolioImage, String title, String context, String price, String discount, Long portfolioId, Boolean clip) {
