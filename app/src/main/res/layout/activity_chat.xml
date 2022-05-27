@@ -39,6 +39,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/black"
         android:text="결제하기"
+        android:fontFamily="@font/spoqahansansneo_bold"
         android:textSize="15sp"/>
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -67,6 +68,7 @@
         android:textSize="16px"
         android:textStyle="bold"
         android:text="소피의 정원"
+        android:fontFamily="@font/spoqahansansneo_bold"
         app:layout_constraintBottom_toBottomOf="@id/imageBack"
         app:layout_constraintEnd_toStartOf="@id/imageInfo"
         app:layout_constraintStart_toEndOf="@id/imageBack"
@@ -139,10 +141,12 @@
         android:imeOptions="actionDone"
         android:importantForAutofill="no"
         android:inputType="text"
+        android:fontFamily="@font/spoqahansansneo_bold"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         android:textColor="@color/white"
         android:textColorHint="@color/secondary_text"
+        android:fontFamily="@font/spoqahansansneo_bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/LayoutSend"
         app:layout_constraintStart_toStartOf="parent" />
