@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="none"
-        android:layout_marginBottom="70dp" >
+        android:layout_marginBottom="63dp" >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -159,17 +159,21 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="11dp"
                     android:text="꽃으로 물드는 우리집! 플라워 인테리어"
+                    android:fontFamily="@font/spoqahansansneo_regular"
                     android:textColor="@color/black"
                     android:textSize="14sp"
+                    android:layout_marginLeft="3dp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="7dp"
+                    android:layout_marginTop="3dp"
                     android:text="봄을 닮은 꽃으로 집 안의 분위기 바꾸기"
+                    android:fontFamily="@font/spoqahansansneo_bold"
+                    android:layout_marginLeft="3dp"
                     android:textColor="#8E8C94"
-                    android:textSize="10sp" />
+                    android:textSize="12sp" />
 
                 <ImageView
                     android:id="@+id/contentsView2"
@@ -184,6 +188,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="11dp"
                     android:text="선물하기 좋은 MBTI별 꽃 추천 🌸"
+                    android:fontFamily="@font/spoqahansansneo_bold"
+                    android:layout_marginLeft="3dp"
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     android:textStyle="bold" />
@@ -191,10 +197,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="7dp"
+                    android:layout_marginTop="3dp"
                     android:text="소소한 사람에게 감동 100배 꽃 선물 해보기!"
                     android:textColor="#8E8C94"
-                    android:textSize="10sp" />
+                    android:fontFamily="@font/spoqahansansneo_bold"
+                    android:layout_marginLeft="3dp"
+                    android:textSize="12sp" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

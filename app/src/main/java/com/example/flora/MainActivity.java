@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
         pickFragment = new PickFragment();
         settingFragment = new SettingFragment();
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, peedFragment).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
         BottomNavigationView bottom_menu = findViewById(R.id.bottomMenu);
         bottom_menu.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @SuppressLint("NonConstantResourceId")
