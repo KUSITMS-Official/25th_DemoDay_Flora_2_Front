@@ -115,7 +115,6 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
                 Bitmap fillBitmap = drawableToBitamp(fillHeart);
                 if(feedItem.getClip()) {
                     holder.clipImage.setImageResource(R.drawable.ic_heart);
-                    feedItem.setClip(false);
                     Call<Void> unClip = RetrofitClient.getAPIService().unClipPortfolio(token, feedItem.portfolioId.toString());
                     unClip.enqueue(new Callback<Void>() {
                         @Override
@@ -128,11 +127,12 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
                             Log.e("연결실패", t.getMessage());
                         }
                     });
+                    feedItem.setClip(false);
+                    notifyDataSetChanged();
                 }
                 else {
                     holder.clipImage.setImageResource(R.drawable.ic_fill_heart);
                     Call<Void> clip = RetrofitClient.getAPIService().clipPortfolio(token, feedItem.portfolioId.toString());
-                    feedItem.setClip(true);
                     clip.enqueue(new Callback<Void>() {
                         @Override
                         public void onResponse(Call<Void> call, Response<Void> response) {
@@ -144,6 +144,8 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
                             Log.e("연결실패", t.getMessage());
                         }
                     });
+                    feedItem.setClip(true);
+                    notifyDataSetChanged();
                 }
             }
         });

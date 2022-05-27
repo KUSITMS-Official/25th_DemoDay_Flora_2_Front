@@ -392,8 +392,6 @@ public class FeedFragment extends Fragment {
     };
 
     private void getPortfolios(String token, String color, Double distance, int priceStart, int priceEnd, String sort) {
-        List<PortfolioResponse> feedItems = new ArrayList<>();
-        mFeedItems = new ArrayList<>();
         Call<PortfolioListResponse> portfolioListCall = RetrofitClient.getAPIService().filterPortfolio(token, color, distance, priceStart, priceEnd, sort);
 
         portfolioListCall.enqueue(new Callback<PortfolioListResponse>() {
@@ -401,6 +399,7 @@ public class FeedFragment extends Fragment {
             public void onResponse(Call<PortfolioListResponse> call, Response<PortfolioListResponse> response) {
                 PortfolioListResponse resource = response.body();
                 List<PortfolioResponse> dataList = resource.getData();
+                mFeedItems = new ArrayList<>();
                 if (dataList != null && dataList.size() != 0) {
                     for (PortfolioResponse data : dataList) {
                         int discount = data.getDiscount();
@@ -416,8 +415,8 @@ public class FeedFragment extends Fragment {
                                     mFeedItems.add(new FeedItem(data.getFlowerShopResponse().getFlowerShopImage(), data.getPortfolioImage(),
                                             data.getFlowerShopResponse().getFlowerShopName(), data.getPortfolioName(), priceFormat, "", data.getId(), clipCheck));
                                 else
-                                    mFeedItems.add(new FeedItem(data.getFlowerShopResponse().getFlowerShopImage(), data.getPortfolioImage(), data.getPortfolioName(),
-                                            data.getFlowerShopResponse().getFlowerShopName(), priceFormat, discount + "%", data.getId(), clipCheck));
+                                    mFeedItems.add(new FeedItem(data.getFlowerShopResponse().getFlowerShopImage(), data.getPortfolioImage(),
+                                            data.getFlowerShopResponse().getFlowerShopName(), data.getPortfolioName(), priceFormat, discount + "%", data.getId(), clipCheck));
                                 mRecyclerAdapter.setFeedList(token, getContext(), mFeedItems);
                                 mRecyclerAdapter.notifyDataSetChanged();
                             }
