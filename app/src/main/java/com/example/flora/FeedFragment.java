@@ -53,6 +53,7 @@ public class FeedFragment extends Fragment {
     public RecyclerView mRecyclerView;
     public FeedRecyclerAdapter mRecyclerAdapter;
     public ArrayList<FeedItem> mFeedItems;
+    public ArrayList<FeedItem> clipFeedItems;
     Button btnSort;
     Button btnFilter;
     Dialog dialogFilter;
@@ -390,32 +391,33 @@ public class FeedFragment extends Fragment {
     };
 
     private void getPortfolios(String token, String color, Double distance, int priceStart, int priceEnd, String sort) {
-        Call<PortfolioListResponse> portfolioListCall3 = RetrofitClient.getAPIService().filterPortfolio(token, color, distance, priceStart, priceEnd, sort);
+        mFeedItems = new ArrayList<>();
+        clipFeedItems = new ArrayList<>();
+        Call<PortfolioListResponse> portfolioListCall = RetrofitClient.getAPIService().filterPortfolio(token, color, distance, priceStart, priceEnd, sort);
 
-        portfolioListCall3.enqueue(new Callback<PortfolioListResponse>() {
+        portfolioListCall.enqueue(new Callback<PortfolioListResponse>() {
             @Override
             public void onResponse(Call<PortfolioListResponse> call, Response<PortfolioListResponse> response) {
                 PortfolioListResponse resource = response.body();
                 List<PortfolioResponse> dataList = resource.getData();
-                mFeedItems = new ArrayList<>();
                 if (dataList != null && dataList.size() != 0) {
                     for (PortfolioResponse data : dataList) {
                         int discount = data.getDiscount();
                         int price = data.getPrice();
                         String priceFormat = String.format("%,d원", price);
-                        System.out.println(priceFormat);
                         if (discount == 0) {
                             mFeedItems.add(new FeedItem(data.getFlowerShopResponse().getFlowerShopImage(), data.getPortfolioImage(),
-                                    data.getFlowerShopResponse().getFlowerShopName(), data.getPortfolioName(), priceFormat, ""));
+                                    data.getFlowerShopResponse().getFlowerShopName(), data.getPortfolioName(), priceFormat, "", data.getId(), false));
                         } else {
                             mFeedItems.add(new FeedItem(data.getFlowerShopResponse().getFlowerShopImage(), data.getPortfolioImage(),
-                                    data.getFlowerShopResponse().getFlowerShopName(), data.getPortfolioName(), priceFormat, discount + "%"));
+                                    data.getFlowerShopResponse().getFlowerShopName(), data.getPortfolioName(), priceFormat, discount + "%", data.getId(), false));
                         }
 
                     }
+                    mRecyclerAdapter.setFeedList(token, getContext(), mFeedItems);
+                    mRecyclerAdapter.notifyDataSetChanged();
                 }
-                mRecyclerAdapter.setFeedList(getContext(), mFeedItems);
-                mRecyclerAdapter.notifyDataSetChanged();
+
             }
 
             @Override
@@ -423,6 +425,33 @@ public class FeedFragment extends Fragment {
                 Log.e("연결실패", t.getMessage());
             }
         });
+
+//        for(FeedItem feedItem : mFeedItems) {
+//            System.out.println(feedItem.getTitle());
+//            Call<Boolean> checkCall = RetrofitClient.getAPIService().checkClipPortfolio(token, feedItem.getPortfolioId().toString());
+//
+//            checkCall.enqueue(new Callback<Boolean>() {
+//                @Override
+//                public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+//                    Boolean resource = response.body();
+//                    if(Integer.valueOf(feedItem.getDiscount()) == 0)
+//                        clipFeedItems.add(new FeedItem(feedItem.getFlowerShopImage(),
+//                                feedItem.getPortfolioImage(), feedItem.getTitle(), feedItem.getContext(),
+//                                feedItem.getPrice(), feedItem.getPortfolioId(), resource));
+//                    else
+//                        clipFeedItems.add(new FeedItem(feedItem.getFlowerShopImage(),
+//                                feedItem.getPortfolioImage(), feedItem.getTitle(), feedItem.getContext(),
+//                                feedItem.getPrice(), feedItem.getDiscount(), feedItem.getPortfolioId(), resource));
+//                }
+//
+//                @Override
+//                public void onFailure(Call<Boolean> call, Throwable t) {
+//                    Log.e("연결실패", t.getMessage());
+//                }
+//            });
+//
+//        }
+
     }
 
     @Override

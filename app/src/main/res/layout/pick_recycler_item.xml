@@ -34,7 +34,7 @@
                 android:layout_gravity="right|bottom"
                 android:layout_margin="10dp"
                 android:adjustViewBounds="true"
-                android:src="@drawable/ic_heart" />
+                android:src="@drawable/ic_fill_heart" />
         </androidx.cardview.widget.CardView>
 
         <LinearLayout

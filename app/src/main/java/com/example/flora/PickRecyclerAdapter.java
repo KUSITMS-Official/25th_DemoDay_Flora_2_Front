@@ -26,7 +26,7 @@ public class PickRecyclerAdapter extends RecyclerView.Adapter<PickRecyclerAdapte
     @NotNull
     @Override
     public PickRecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_recycler_item2, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.pick_recycler_item, parent, false);
 
         return new ViewHolder(view);
 

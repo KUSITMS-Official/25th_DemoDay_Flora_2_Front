@@ -70,7 +70,7 @@ public class ChatActivity extends AppCompatActivity {
 
         // 초기설정 - 해당 프로젝트(안드로이드)의 application id 값을 설정합니다. 결제와 통계를 위해 꼭 필요합니다.
         // 앱에서 확인하지 말고 꼭 웹 사이트에서 확인하자. 앱의 application id 갖다 쓰면 안됨!!!
-        BootpayAnalytics.init(this, "628f8811e38c3000208095dd");
+        BootpayAnalytics.init(this, "626f85be2701800023f6a9f8");
 
         payButton = findViewById(R.id.payApi);
         payButton.setOnClickListener(new View.OnClickListener() {
@@ -155,7 +155,7 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     private void setListeners() {
-        binding.imageBack.setOnClickListener(v -> onBackPressed());
+//        binding.imageBack.setOnClickListener(v -> onBackPressed());
         binding.LayoutSend.setOnClickListener(v -> sendMessage());
     }
 
@@ -168,7 +168,7 @@ public class ChatActivity extends AppCompatActivity {
         BootExtra bootExtra = new BootExtra().setQuotas(new int[]{0, 2, 3});
 
         Bootpay.init(getFragmentManager())
-                .setApplicationId("628f8811e38c3000208095dd") // 해당 프로젝트(안드로이드)의 application id 값(위의 값 복붙)
+                .setApplicationId("626f85be2701800023f6a9f8") // 해당 프로젝트(안드로이드)의 application id 값(위의 값 복붙)
                 .setPG(PG.INICIS) // 결제할 PG 사
                 .setMethod(Method.CARD) // 결제수단
                 .setContext(ChatActivity.this)
@@ -178,7 +178,7 @@ public class ChatActivity extends AppCompatActivity {
                 .setName("카탈리나 장미 꽃다발") // 결제할 상품명
                 .setOrderId("1234") // 결제 고유번호 (expire_month)
                 .setPrice(10000) // 결제할 금액
-                .addItem("카탈리나 장미 꽃다발", 1, "ITEM_CODE_FLOWER", 45000) // 주문정보에 담길 상품정보, 통계를 위해 사용
+                .addItem("카탈리나 장미 꽃다발", 1, "ITEM_CODE_FLOWER", 49600) // 주문정보에 담길 상품정보, 통계를 위해 사용
                 .onConfirm(new ConfirmListener() { // 결제가 진행되기 바로 직전 호출되는 함수로, 주로 재고처리 등의 로직이 수행
                     @Override
                     public void onConfirm(@Nullable String message) {

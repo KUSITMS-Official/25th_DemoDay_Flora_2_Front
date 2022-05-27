@@ -26,7 +26,7 @@ public class PickRecyclerAdapter2 extends RecyclerView.Adapter<PickRecyclerAdapt
     @NotNull
     @Override
     public PickRecyclerAdapter2.ViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_recycler_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.pick_recycler_item2, parent, false);
 
         return new ViewHolder(view);
 
@@ -51,20 +51,20 @@ public class PickRecyclerAdapter2 extends RecyclerView.Adapter<PickRecyclerAdapt
     class ViewHolder extends RecyclerView.ViewHolder {
         ImageView profileImage;
         TextView titleTv;
-        TextView contextTv;
+        TextView countTv;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             profileImage = (ImageView) itemView.findViewById(R.id.profileImage);
             titleTv = (TextView) itemView.findViewById(R.id.titleTv);
-            contextTv = (TextView) itemView.findViewById(R.id.contextTv);
+            countTv = (TextView) itemView.findViewById(R.id.count);
         }
 
         void onBind(PickItem2 item){
             Glide.with(context).load(item.getProfileImage()).into(profileImage);
             titleTv.setText(item.getTitle());
-            contextTv.setText(item.getContext());
+            countTv.setText(item.getCount());
         }
     }
 
