@@ -54,10 +54,9 @@
 
                 <ImageView
                     android:id="@+id/profileImage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
                     android:layout_marginLeft="5dp"
-                    android:layout_marginTop="8dp"
                     android:adjustViewBounds="true"
                     android:src="@drawable/profile_temp" />
             </androidx.cardview.widget.CardView>
@@ -77,7 +76,7 @@
             android:id="@+id/contextTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="10dp"
             android:text="프리지아 하늘색 꽃다발"
             android:textColor="#8E8C94"
             android:textSize="13dp" />
@@ -91,7 +90,7 @@
                 android:id="@+id/priceTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="10dp"
                 android:text="65,000원"
                 android:textColor="@color/black"
                 android:textSize="14sp"
