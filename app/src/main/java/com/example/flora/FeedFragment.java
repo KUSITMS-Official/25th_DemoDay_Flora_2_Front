@@ -407,14 +407,17 @@ public class FeedFragment extends Fragment {
                         String priceFormat = String.format("%,d원", price);
                         if (discount == 0) {
                             mFeedItems.add(new FeedItem(data.getFlowerShopResponse().getFlowerShopImage(), data.getPortfolioImage(),
-                                    data.getFlowerShopResponse().getFlowerShopName(), data.getPortfolioName(), priceFormat, "", data.getId(), true));
+                                    data.getFlowerShopResponse().getFlowerShopName(), data.getPortfolioName(), priceFormat, "", data.getId(), false));
                         } else {
                             mFeedItems.add(new FeedItem(data.getFlowerShopResponse().getFlowerShopImage(), data.getPortfolioImage(),
-                                    data.getFlowerShopResponse().getFlowerShopName(), data.getPortfolioName(), priceFormat, discount + "%", data.getId(), true));
+                                    data.getFlowerShopResponse().getFlowerShopName(), data.getPortfolioName(), priceFormat, discount + "%", data.getId(), false));
                         }
 
                     }
+                    mRecyclerAdapter.setFeedList(token, getContext(), mFeedItems);
+                    mRecyclerAdapter.notifyDataSetChanged();
                 }
+
             }
 
             @Override
@@ -449,8 +452,6 @@ public class FeedFragment extends Fragment {
 //
 //        }
 
-        mRecyclerAdapter.setFeedList(token, getContext(), mFeedItems);
-        mRecyclerAdapter.notifyDataSetChanged();
     }
 
     @Override

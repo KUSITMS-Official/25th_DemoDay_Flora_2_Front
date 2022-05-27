@@ -7,7 +7,7 @@ public class FeedItem {
     String context;
     String price;
     String discount;
-    Boolean clip;
+    Boolean clip = false;
     Long portfolioId;
 
     public FeedItem(String flowerShopImage, String portfolioImage, String title, String context, String price, String discount, Long portfolioId) {
@@ -20,15 +20,6 @@ public class FeedItem {
         this.portfolioId = portfolioId;
     }
 
-    public FeedItem(String flowerShopImage, String portfolioImage, String title, String context, String price, Long portfolioId) {
-        this.flowerShopImage = flowerShopImage;
-        this.portfolioImage = portfolioImage;
-        this.title = title;
-        this.context = context;
-        this.price= price;
-        this.portfolioId = portfolioId;
-    }
-
     public FeedItem(String flowerShopImage, String portfolioImage, String title, String context, String price, String discount, Long portfolioId, Boolean clip) {
         this.flowerShopImage = flowerShopImage;
         this.portfolioImage = portfolioImage;
@@ -36,16 +27,6 @@ public class FeedItem {
         this.context = context;
         this.price= price;
         this.discount = discount;
-        this.portfolioId = portfolioId;
-        this.clip = clip;
-    }
-
-    public FeedItem(String flowerShopImage, String portfolioImage, String title, String context, String price, Long portfolioId, Boolean clip) {
-        this.flowerShopImage = flowerShopImage;
-        this.portfolioImage = portfolioImage;
-        this.title = title;
-        this.context = context;
-        this.price= price;
         this.portfolioId = portfolioId;
         this.clip = clip;
     }

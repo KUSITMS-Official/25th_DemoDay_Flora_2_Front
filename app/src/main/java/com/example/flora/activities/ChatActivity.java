@@ -155,7 +155,7 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     private void setListeners() {
-        binding.imageBack.setOnClickListener(v -> onBackPressed());
+//        binding.imageBack.setOnClickListener(v -> onBackPressed());
         binding.LayoutSend.setOnClickListener(v -> sendMessage());
     }
 
@@ -178,7 +178,7 @@ public class ChatActivity extends AppCompatActivity {
                 .setName("카탈리나 장미 꽃다발") // 결제할 상품명
                 .setOrderId("1234") // 결제 고유번호 (expire_month)
                 .setPrice(10000) // 결제할 금액
-                .addItem("카탈리나 장미 꽃다발", 1, "ITEM_CODE_FLOWER", 45000) // 주문정보에 담길 상품정보, 통계를 위해 사용
+                .addItem("카탈리나 장미 꽃다발", 1, "ITEM_CODE_FLOWER", 49600) // 주문정보에 담길 상품정보, 통계를 위해 사용
                 .onConfirm(new ConfirmListener() { // 결제가 진행되기 바로 직전 호출되는 함수로, 주로 재고처리 등의 로직이 수행
                     @Override
                     public void onConfirm(@Nullable String message) {
