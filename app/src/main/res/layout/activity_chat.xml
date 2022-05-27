@@ -25,19 +25,6 @@
         app:layout_constraintBottom_toTopOf="@id/viewSupporter"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imageBack"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="12dp"
-        android:padding="5dp"
-        android:src="@drawable/ic_left_arrow"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/black" />
-
 
     <Button
         android:id="@+id/payApi"
@@ -77,7 +64,7 @@
         android:gravity="center"
         android:maxLines="1"
         android:textColor="@color/black"
-        android:textSize="14dp"
+        android:textSize="16px"
         android:textStyle="bold"
         android:text="소피의 정원"
         app:layout_constraintBottom_toBottomOf="@id/imageBack"
