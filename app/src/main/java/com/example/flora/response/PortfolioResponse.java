@@ -93,6 +93,8 @@ public class PortfolioResponse {
     @SerializedName("portfolioName")
     private String portfolioName;
 
+    private Boolean clipCheck;
+
     public FlowerShopResponse getFlowerShopResponse ()
     {
         return flowerShopResponse;
@@ -250,6 +252,9 @@ public class PortfolioResponse {
         this.portfolioName = portfolioName;
     }
 
+    public Boolean getClipCheck () {return clipCheck;}
+
+    public void setClipCheck (Boolean clipCheck) { this.clipCheck = clipCheck; }
     @Override
     public String toString()
     {

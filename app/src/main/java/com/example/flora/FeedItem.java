@@ -10,16 +10,6 @@ public class FeedItem {
     Boolean clip = false;
     Long portfolioId;
 
-    public FeedItem(String flowerShopImage, String portfolioImage, String title, String context, String price, String discount, Long portfolioId) {
-        this.flowerShopImage = flowerShopImage;
-        this.portfolioImage = portfolioImage;
-        this.title = title;
-        this.context = context;
-        this.price= price;
-        this.discount = discount;
-        this.portfolioId = portfolioId;
-    }
-
     public FeedItem(String flowerShopImage, String portfolioImage, String title, String context, String price, String discount, Long portfolioId, Boolean clip) {
         this.flowerShopImage = flowerShopImage;
         this.portfolioImage = portfolioImage;
