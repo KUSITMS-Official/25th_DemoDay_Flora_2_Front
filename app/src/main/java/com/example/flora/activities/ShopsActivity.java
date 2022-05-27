@@ -1,16 +1,14 @@
 package com.example.flora.activities;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.flora.ChatActivity;
 import com.example.flora.adapters.ShopAdapter;
-import com.example.flora.databinding.ActivityMainBinding;
-import com.example.flora.databinding.ActivityReservationBinding;
 import com.example.flora.databinding.ActivityShopsBinding;
 import com.example.flora.listeners.ShopListener;
 import com.example.flora.models.Shop;
