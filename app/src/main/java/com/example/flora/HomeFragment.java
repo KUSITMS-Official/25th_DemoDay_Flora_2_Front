@@ -131,7 +131,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = (ViewGroup) inflater.inflate(R.layout.fragment_home, container, false);
+        View rootView = (ViewGroup) inflater.inflate(R.layout.fragment_feed, container, false);
 
         Intent mainIntent = getActivity().getIntent();
         token = mainIntent.getExtras().getString("access_token");

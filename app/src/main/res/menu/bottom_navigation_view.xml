@@ -7,7 +7,7 @@
         android:title="피드"
         android:id="@+id/feedButton"
         android:icon="@drawable/ic_feed"
-        app:showAsAction="always" />
+        app:showAsAction="always"/>
     <item
         android:title="채팅"
         android:id="@+id/chatButton"
@@ -17,7 +17,6 @@
         android:title="홈"
         android:id="@+id/homeButton"
         android:icon="@drawable/ic_home"
-
         app:showAsAction="always"/>
     <item
         android:title="찜하기"
