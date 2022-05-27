@@ -111,17 +111,16 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
             public void onClick(View v) {
                 Drawable drawable = holder.clipImage.getDrawable();
                 Drawable fillHeart = context.getResources().getDrawable(R.drawable.ic_fill_heart);
-                Bitmap bitmap = ((BitmapDrawable)drawable).getBitmap();
-                Bitmap fillBitmap = ((BitmapDrawable)fillHeart).getBitmap();
-                if(bitmap.equals(fillBitmap)) {
+                Bitmap bitmap = drawableToBitamp(drawable);
+                Bitmap fillBitmap = drawableToBitamp(fillHeart);
+                if(feedItem.getClip()) {
                     holder.clipImage.setImageResource(R.drawable.ic_heart);
+                    feedItem.setClip(false);
                     Call<Void> unClip = RetrofitClient.getAPIService().unClipPortfolio(token, feedItem.portfolioId.toString());
-
                     unClip.enqueue(new Callback<Void>() {
                         @Override
                         public void onResponse(Call<Void> call, Response<Void> response) {
-
-                            Log.d("연결성공", response.body().toString());
+                            Log.d("연결성공", "클립해제!");
                         }
 
                         @Override
@@ -133,12 +132,11 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
                 else {
                     holder.clipImage.setImageResource(R.drawable.ic_fill_heart);
                     Call<Void> clip = RetrofitClient.getAPIService().clipPortfolio(token, feedItem.portfolioId.toString());
-
+                    feedItem.setClip(true);
                     clip.enqueue(new Callback<Void>() {
                         @Override
                         public void onResponse(Call<Void> call, Response<Void> response) {
-
-                            Log.d("연결성공", response.body().toString());
+                            Log.d("연결성공", "클립!");
                         }
 
                         @Override
@@ -149,6 +147,12 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
                 }
             }
         });
+    }
+    private Bitmap drawableToBitamp(Drawable drawable)
+    {
+        int w = drawable.getIntrinsicWidth();
+        int h = drawable.getIntrinsicHeight();
+        return Bitmap.createBitmap(w,h,Bitmap.Config.ARGB_8888);
     }
 
 }
