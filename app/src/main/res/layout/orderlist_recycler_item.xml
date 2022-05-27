@@ -28,6 +28,18 @@
                 android:layout_marginTop="5dp"
                 android:textSize="16dp" />
 
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/spoqahansansneo_bold"
+                android:text="픽업 완료"
+                android:textColor="#FFE83A"
+                android:textSize="16dp" />
+
             <View
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -35,9 +47,9 @@
 
             <ImageView
                 android:id="@+id/arrowButton"
-                android:layout_width="85dp"
-                android:layout_height="34dp"
-                android:layout_gravity="center"
+                android:layout_width="75dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="5dp"
                 app:srcCompat="@drawable/order_detail_button" />
 
         </LinearLayout>
@@ -46,17 +58,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="3dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="15dp"
-                android:fontFamily="@font/spoqahansansneo_bold"
-                android:text="픽업 완료"
-                android:textColor="#FFE83A"
-                android:textSize="18dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
