@@ -39,6 +39,9 @@
             android:name=".SearchMapActivity"
             android:exported="true" />
         <activity
+            android:name=".SeeStore"
+            android:exported="true" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="true" />
         <activity
