@@ -25,19 +25,6 @@
         app:layout_constraintBottom_toTopOf="@id/viewSupporter"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imageBack"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="12dp"
-        android:padding="5dp"
-        android:src="@drawable/ic_left_arrow"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/black" />
-
 
     <Button
         android:id="@+id/payApi"
@@ -52,6 +39,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/black"
         android:text="결제하기"
+        android:fontFamily="@font/spoqahansansneo_bold"
         android:textSize="15sp"/>
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -77,9 +65,10 @@
         android:gravity="center"
         android:maxLines="1"
         android:textColor="@color/black"
-        android:textSize="14dp"
+        android:textSize="16px"
         android:textStyle="bold"
         android:text="소피의 정원"
+        android:fontFamily="@font/spoqahansansneo_bold"
         app:layout_constraintBottom_toBottomOf="@id/imageBack"
         app:layout_constraintEnd_toStartOf="@id/imageInfo"
         app:layout_constraintStart_toEndOf="@id/imageBack"
@@ -152,10 +141,12 @@
         android:imeOptions="actionDone"
         android:importantForAutofill="no"
         android:inputType="text"
+        android:fontFamily="@font/spoqahansansneo_bold"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         android:textColor="@color/white"
         android:textColorHint="@color/secondary_text"
+        android:fontFamily="@font/spoqahansansneo_bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/LayoutSend"
         app:layout_constraintStart_toStartOf="parent" />
