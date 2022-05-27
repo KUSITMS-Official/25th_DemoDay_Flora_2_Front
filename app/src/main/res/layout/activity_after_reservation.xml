@@ -138,7 +138,7 @@
         android:layout_height="295dp"
         android:hint="    요구사항을 적어주세요."
         android:fontFamily="@font/spoqahansansneo_medium"
-        android:backgroundTint="#00ff0000"
+        android:backgroundTint="#F1F2F5"
         android:layout_marginBottom="30dp"
         android:background="@drawable/edittext_rounded_corner_rectangle"
         />
