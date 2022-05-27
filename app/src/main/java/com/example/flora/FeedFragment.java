@@ -414,7 +414,7 @@ public class FeedFragment extends Fragment {
                                 System.out.println(resource+""+data.getId());
                                 if(Integer.valueOf(data.getDiscount()) == 0)
                                     mFeedItems.add(new FeedItem(data.getFlowerShopResponse().getFlowerShopImage(), data.getPortfolioImage(),
-                                            data.getPortfolioName(), data.getFlowerShopResponse().getFlowerShopName(), priceFormat, "", data.getId(), clipCheck));
+                                            data.getFlowerShopResponse().getFlowerShopName(), data.getPortfolioName(), priceFormat, "", data.getId(), clipCheck));
                                 else
                                     mFeedItems.add(new FeedItem(data.getFlowerShopResponse().getFlowerShopImage(), data.getPortfolioImage(), data.getPortfolioName(),
                                             data.getFlowerShopResponse().getFlowerShopName(), priceFormat, discount + "%", data.getId(), clipCheck));
