@@ -17,6 +17,7 @@
         android:title="홈"
         android:id="@+id/homeButton"
         android:icon="@drawable/ic_home"
+
         app:showAsAction="always"/>
     <item
         android:title="찜하기"

@@ -75,6 +75,7 @@ public class FeedFragment extends Fragment {
     int priceEnd = 0;
     int height = 0;
     String token;
+    Boolean clipCheck;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -391,8 +392,8 @@ public class FeedFragment extends Fragment {
     };
 
     private void getPortfolios(String token, String color, Double distance, int priceStart, int priceEnd, String sort) {
+        List<PortfolioResponse> feedItems = new ArrayList<>();
         mFeedItems = new ArrayList<>();
-        clipFeedItems = new ArrayList<>();
         Call<PortfolioListResponse> portfolioListCall = RetrofitClient.getAPIService().filterPortfolio(token, color, distance, priceStart, priceEnd, sort);
 
         portfolioListCall.enqueue(new Callback<PortfolioListResponse>() {
@@ -405,17 +406,29 @@ public class FeedFragment extends Fragment {
                         int discount = data.getDiscount();
                         int price = data.getPrice();
                         String priceFormat = String.format("%,d원", price);
-                        if (discount == 0) {
-                            mFeedItems.add(new FeedItem(data.getFlowerShopResponse().getFlowerShopImage(), data.getPortfolioImage(),
-                                    data.getFlowerShopResponse().getFlowerShopName(), data.getPortfolioName(), priceFormat, "", data.getId(), false));
-                        } else {
-                            mFeedItems.add(new FeedItem(data.getFlowerShopResponse().getFlowerShopImage(), data.getPortfolioImage(),
-                                    data.getFlowerShopResponse().getFlowerShopName(), data.getPortfolioName(), priceFormat, discount + "%", data.getId(), false));
-                        }
+                        Call<Boolean> checkCall = RetrofitClient.getAPIService().checkClipPortfolio(token, data.getId().toString());
+                        checkCall.enqueue(new Callback<Boolean>() {
+                            @Override
+                            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                                clipCheck = response.body().booleanValue();
+                                System.out.println(resource+""+data.getId());
+                                if(Integer.valueOf(data.getDiscount()) == 0)
+                                    mFeedItems.add(new FeedItem(data.getFlowerShopResponse().getFlowerShopImage(), data.getPortfolioImage(),
+                                            data.getFlowerShopResponse().getFlowerShopName(), data.getPortfolioName(), priceFormat, "", data.getId(), clipCheck));
+                                else
+                                    mFeedItems.add(new FeedItem(data.getFlowerShopResponse().getFlowerShopImage(), data.getPortfolioImage(), data.getPortfolioName(),
+                                            data.getFlowerShopResponse().getFlowerShopName(), priceFormat, discount + "%", data.getId(), clipCheck));
+                                mRecyclerAdapter.setFeedList(token, getContext(), mFeedItems);
+                                mRecyclerAdapter.notifyDataSetChanged();
+                            }
+
+                            @Override
+                            public void onFailure(Call<Boolean> call, Throwable t) {
+                                Log.e("연결실패", t.getMessage());
+                            }
+                        });
 
                     }
-                    mRecyclerAdapter.setFeedList(token, getContext(), mFeedItems);
-                    mRecyclerAdapter.notifyDataSetChanged();
                 }
 
             }
@@ -425,32 +438,6 @@ public class FeedFragment extends Fragment {
                 Log.e("연결실패", t.getMessage());
             }
         });
-
-//        for(FeedItem feedItem : mFeedItems) {
-//            System.out.println(feedItem.getTitle());
-//            Call<Boolean> checkCall = RetrofitClient.getAPIService().checkClipPortfolio(token, feedItem.getPortfolioId().toString());
-//
-//            checkCall.enqueue(new Callback<Boolean>() {
-//                @Override
-//                public void onResponse(Call<Boolean> call, Response<Boolean> response) {
-//                    Boolean resource = response.body();
-//                    if(Integer.valueOf(feedItem.getDiscount()) == 0)
-//                        clipFeedItems.add(new FeedItem(feedItem.getFlowerShopImage(),
-//                                feedItem.getPortfolioImage(), feedItem.getTitle(), feedItem.getContext(),
-//                                feedItem.getPrice(), feedItem.getPortfolioId(), resource));
-//                    else
-//                        clipFeedItems.add(new FeedItem(feedItem.getFlowerShopImage(),
-//                                feedItem.getPortfolioImage(), feedItem.getTitle(), feedItem.getContext(),
-//                                feedItem.getPrice(), feedItem.getDiscount(), feedItem.getPortfolioId(), resource));
-//                }
-//
-//                @Override
-//                public void onFailure(Call<Boolean> call, Throwable t) {
-//                    Log.e("연결실패", t.getMessage());
-//                }
-//            });
-//
-//        }
 
     }
 
